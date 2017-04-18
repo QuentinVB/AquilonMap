@@ -43,9 +43,9 @@ include("functions/toolbox.php");
 				crs: L.CRS.Simple,
 				minZoom: -5
 			});
-			var north = L.imageOverlay('img/carte nord.jpg', mapBounds(3300,2470,[340,-1040])).setOpacity(1.0).addTo(map);
 			var mult = 0.74;
-			var south = L.imageOverlay('img/map_south.jpg', mapBounds(5000*mult,5833*mult,[-3960,-713])).setOpacity(1.0).addTo(map);
+			var north = L.imageOverlay('img/north.jpg', mapBounds(5000*mult,3353*mult,[356,-713])).setOpacity(1.0).addTo(map);			
+			var south = L.imageOverlay('img/south.jpg', mapBounds(5000*mult,5833*mult,[-3960,-713])).setOpacity(1.0).addTo(map);
 			map.fitBounds(mapBounds(5000*mult,5833*mult,[-3970,-700]));
 
 			<?php
