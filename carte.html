@@ -1,0 +1,653 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>carte</title>
+	<style>
+	#container
+	{
+		position: absolute;
+		top:2800px;
+		left:1200px;
+	}
+	#container #central
+	{
+		position: absolute;
+		top:-340px;
+		left:-880px;
+		z-index:0;
+	}
+	#container #north
+	{
+		position: absolute;
+		top:-2810px;
+		left:-1040px;
+		z-index:0;
+	}
+	#container div
+	{
+		position : absolute;
+		background:url('img/point.png') top left no-repeat;
+		padding-left : 10px;
+		max-width:200px;
+		z-index:1;
+	}
+	#container #location
+	{
+		left:571px; 
+		top:191px;
+		background:url('img/location.gif') top left no-repeat;
+	}
+	#container .fleuve
+	{
+		background:url('img/location.png') top left no-repeat;
+	}
+	</style>
+</head>
+
+<body>
+    <div id="container">
+		<div id="location">HAMIL</div>
+		<!--MISC-->
+		<div style="top:0; left:0;">PK 0</div>
+		<div style="top:-78px; left:310px;">Spawn</div>
+		<!--RUINES-->
+		<div style="top:34px; left:50px;">Ruines Entrée </div>
+		<div style="top:-13px; left:283px;">Ruines Balcon </div>
+		<div style="top:62px; left:205px;">Ruines Forge </div>
+		<div style="top:-15px; left:339px;">Ruines sortie marine </div>
+		<!--LIMITE MAP-->
+		<div style="top:-190px; left:-156px;">Limit</div>
+		<div style="top:-314px; left:-65px;">Limit</div>
+		<div style="top:-103px; left:544px;">Limit</div>
+		<div style="top:1833px; left:402px;">Limit</div>
+		<div style="top:1280px; left:1847px;">Limit</div>	
+		<div style="top:537px; left:1056px;">Limit</div>	
+		<div style="top:1411px; left:1700px;">Limit</div>	
+		<div style=" left:-726px; top:1113px;">Limit</div>	
+		<div style=" left:-650px; top:1308px;">Limit</div>	
+		<div style=" left:644px; top:1737px;">Limit</div>	
+		
+		<div style="top:58px; left:-376px;">Temple Sous-Marin #1</div>
+		<div style="top:1700px; left:-320px;">Temple Sous-Marin #2</div>
+		<div style="left:-850px; top:1160px;">Temple Sous-Marin #3</div>
+		<div style="left:800px; top:676px;">Temple Sous-Marin #4</div>
+		
+		<div style="top:1069px; left:694px;">Emplacement : port</div>		
+		<div style="top:262px; left:-339px;">Emplacement : pilotis</div>
+		
+		<div style="top:890px; left:-122px;">Camp de l'Ordre</div>
+		<div style="left:20px; top:1042px; ">Ruines marais#1</div>
+		<div style="left:-30px; top:950px; ">Ruines marais#2</div>
+		<div style="left:100px; top:1100px; ">Ruines marais#3</div>
+		
+		<div style="top:1049px; left:990px;">sanctuaire</div>	
+		<div style="top:1426px; left:891px;">Forteresse Montagne (Refuge)</div>	
+		<div style="top:1741px; left:322px;">Ancien temple</div>		
+		<div style="top:1050px; left:-171px;">Fortin abandonné</div>
+		<div style="top:57px; left:0;">Pont Zeult</div>
+		<div style="top:64px; left:-107px;">SBED</div>
+		<div style="top:287px; left:596px;">extreme est ?</div>
+		
+		<div style="top:479px; left:787px;">banc de sable</div>
+		<div style="top:862px; left:1138px;">cotes</div>
+		<div style="top:912px; left:1498px;">cotes</div>
+		<div style="top:1267px; left:1800px;">cotes</div>
+		
+		<div style="left:550px; top:920px; ">cotes</div>
+		<div style="left:523px; top:734px; ">cotes</div>
+		<div style="left:-445px; top:329px; ">cotes</div>
+		<div style="left:-487px; top:424px; ">cotes</div>
+		<div style="left:-657px; top:683px; ">cotes</div>
+		<div style="left:-503px; top:756px; ">cotes</div>
+		<div style="left:-391px; top:751px; ">cotes</div>
+		<div style="left:-371px; top:882px; ">cotes</div>
+		<div style="left:-306px; top:1015px; ">cotes</div>
+		<div style="left:1570px; top:1111px; ">cotes</div>
+		<div style="left:1721px; top:1000px;">banc de sable</div>
+		
+		<div style="left:368px; top:600px;">Mborder</div>
+		<div style="left:326px; top:545px;">Mborder</div>
+		<div style="left:290px; top:596px;">Mborder</div>
+		<div style="left:200px; top:478px;">Mborder</div>
+		<div style="left:214px; top:345px;">Mborder</div>
+		<div style="left:282px; top:282px;">Mborder</div>
+		<div style="left:326px; top:213px;">Mborder</div>
+		<div style="left:301px; top:186px;">Mborder</div>
+		<div style="left:233px; top:168px;">Mborder</div>
+		<div style="left:258px; top:233px;">Mborder</div>
+		<div style="left:178px; top:173px;">Mborder</div>
+		<div style="left:200px; top:257px;">Mborder</div>
+		<div style="left:131px; top:316px;">Mborder</div>
+		<div style="left:100px; top:196px;">Mborder</div>
+		<div style="left:-2px; top:307px;">Mborder</div>
+		<div style="left:256px; top:442px;">Vallé close</div>
+		<div style="left:276px; top:337px;">Vallé close</div>
+		
+		<div style="left:271px; top:528px;">Ruines Secretes</div>
+		<div style="left:306px; top:233px;">Maison Alain Queart-de-main</div>
+		<div style="left:80px; top:327px;">Machineries étranges</div>
+		
+		<div style="left:-92px; top:310px;">route</div>
+		<div style="left:-123px; top:466px;">pont</div>
+		<div style="left:-123px; top:568px;">pont</div>
+		<div style="left:-122px; top:700px;">route</div>
+		<div style="left:-122px; top:747px;">route</div>
+		
+		
+		<!--invert-->
+		<div style="left:2100px; top:1400px; ">nouvelle ile</div>	
+		<div style="left:29px; top:1292px;">Camp de Vorvask</div>
+		<div style="left:-71px; top:1103px;">crypte inondée</div>
+		<div style="left:-189px; top:954px;">maison détruite</div>
+		<div style="left:-202px; top:934px;">arbre d'Anna</div>
+		<div style="left:-280px; top:1261px;">banc de sable</div>
+		<div style="left:-294px; top:1594px;">pointe extrème sud-ouest</div>		
+		<div style="left:484px; top:1836px;">cote - limite</div>
+		<div style="left:575px; top:1600px;">glacier - sud</div>
+		<div style="left:500px; top:1400px;">glacier - nord</div>
+		<div style="left:430px; top:1540px;">glacier - ouest</div>
+		<div style="left:758px; top:1668px;">plateaux creux</div>
+		<div style="left:420px; top:1010px;">lac de plaine</div>
+		<div style="left:-70px; top:1520px;">camp Gobelin</div>
+		<div style="left:1507px; top:1221px;">Mini-Désert</div>
+		<div style="left:1633px; top:1221px;">Ruines des sables</div>
+		<div style="left:415px; top:27px;">balise marine</div>
+		<div style="left:1543px; top:1550px;">cote - limite</div>
+		
+		<!--FLEUVE TRACE-->
+		<div class="fleuve" style="left:365px; top:1231px;">Fleuve branche</div>
+		<div class="fleuve" style="left:50px; top:670px;">Fleuve branche</div>
+		<div class="fleuve" style="left:14px; top:615px;">Fleuve branche</div>
+		<div class="fleuve" style="left:963px; top:1588px;">Fleuve branche</div>
+		<div class="fleuve" style="left:1180px; top:1323px;">Fleuve branche</div>
+		<div class="fleuve" style="left:700px; top:1318px;">Fleuve branche</div>
+		<div class="fleuve" style="left:403px; top:1128px;">Fleuve</div>
+		<div class="fleuve" style="left:748px; top:1237px;">Fleuve</div>
+		<div class="fleuve" style="left:217px; top:1062px;">Fleuve</div>
+		<div class="fleuve" style="left:105px; top:992px;">Fleuve</div>
+		<div class="fleuve" style="left:190px; top:747px;">Fleuve</div>
+		<div class="fleuve" style="left:63px; top:504px;">Fleuve</div>
+		<div class="fleuve" style="left:10px; top:740px;">Fleuve</div>
+		<div class="fleuve" style="left:-23px; top:380px;">Fleuve</div>
+		<div class="fleuve" style="left:-70px; top:280px;">Fleuve</div>
+		<div class="fleuve" style="left:-70px; top:744px;">Fleuve -source</div>
+		<div class="fleuve" style="left:-63px; top:208px;">Fleuve -source</div>
+		<div class="fleuve" style="left:-63px; top:543px;">Fleuve - lac</div>
+		<div class="fleuve" style="left:245px; top:1282px;">Fleuve</div>
+		<div class="fleuve" style="left:82px; top:1279px;">Fleuve</div>
+		<div class="fleuve" style="left:58px; top:1373px;">Fleuve</div>
+		<div class="fleuve" style="left:144px; top:1398px;">Fleuve</div>
+		<div class="fleuve" style="left:205px; top:1500px;">Fleuve</div>
+		<div class="fleuve" style="left:304px; top:1484px;">Fleuve - cascade</div>
+		<div class="fleuve" style="left:824px; top:1292px;">Fleuve - cascade</div>
+		<div class="fleuve" style="left:546px; top:1366px;">Fleuve</div>
+		<div class="fleuve" style="left:653px; top:1305px;">Fleuve</div>
+		<div class="fleuve" style="left:900px; top:1676px;">Fleuve</div>
+		<div class="fleuve" style="left:988px; top:1425px;">Fleuve - lac</div>
+		<div class="fleuve" style="left:1072px; top:1484px;">Fleuve</div>
+		<div class="fleuve" style="left:1180px; top:1443px;">Fleuve</div>
+		<div class="fleuve" style="left:1070px; top:1240px;">Fleuve - source</div>
+		<div class="fleuve" style="left:1313px; top:1380px;">Fleuve</div>
+		<div class="fleuve" style="left:1351px; top:1364px;">Fleuve</div>
+		<div class="fleuve" style="left:1517px; top:1433px;">Fleuve - embouchure</div>
+		
+		
+		<!--NORD-->
+		
+		<div style="left:-244px; top:-2363px;">Bureau des quètes</div>
+		<div style="left:-360px; top:-2440px;">Temple Sous-Marin</div>
+		<div style="left:-209px; top:-2484px;">Cote	</div>
+		
+		<div style="left:-50px; top:-2629px;">fleuve +limite + montagnes	</div>
+		<div style="left:120px; top:-2626px;">fleuve +limite + montagnes	</div>
+		<div style="left:166px; top:-2696px;">fleuve +limite + montagnes	</div>
+		<div style="left:267px; top:-2750px;">fleuve +limite + montagnes	</div>
+		<div style="left:314px; top:-2710px;">fleuve + montagnes	</div>
+		<div style="left:175px; top:-2658px;">Pic, emplacement tour</div>
+		<div style="left:-50px; top:-2800px;">Nouvelle ile</div>
+		<div style="left:195px; top:-2753px;">fleuve +Limite</div>
+		<div style="left:302px; top:-2698px;">Avant-poste Vorsk</div>
+		<div style="left:410px; top:-2635px;">cotes</div>
+		<div style="left:425px; top:-2641px;">fleuve +limites</div>
+		<div style="left:480px; top:-2498px;">fleuve +limites</div>
+		<div style="left:680px; top:-2385px;">fleuve +limites</div>
+		<div style="left:433px; top:-2586px;">fleuve + montagnes	</div>
+		<div style="left:468px; top:-2247px;">limites</div>
+		<div style="left:484px; top:-2155px;">podzol</div>
+		<div style="left:870px; top:-2167px;">flambeau</div>
+		<div style="left:831px; top:-2111px;">cabane couverte de sang</div>
+		<div style="left:769px; top:-1893px;">campement</div>
+		<div style="left:1456px; top:-1886px;">lacs de plaines</div>
+		<div style="left:1600px; top:-2072px;">montagne</div>
+		<div style="left:1732px; top:-2147px;">limite</div>
+		<div style="left:1813px; top:-2168px;">limite</div>
+		<div style="left:1876px; top:-2139px;">limite</div>
+		<div style="left:2120px; top:-2025px;">limite + cote+montagne</div>
+		<div style="left:1700px; top:-2120px;">fleuve source + limite </div>
+		<div style="left:2186px; top:-1895px;">limite</div>
+		<div style="left:2100px; top:-1775px;">cotes</div>
+		<div style="left:2063px; top:-1675px;">cotes</div>
+		<div style="left:2146px; top:-1500px;">cotes</div>
+		<div style="left:2121px; top:-1422px;">phare des ombres</div>
+		<div style="left:2204px; top:-1347px;">limites</div>
+		<div style="left:2045px; top:-1388px;">cotes</div>
+		<div style="left:1898px; top:-1386px;">cotes</div>
+		<div style="left:1954px; top:-1301px;">cotes</div>
+		<div style="left:1937px; top:-1245px;">cotes</div>
+		<div style="left:1798px; top:-1195px;">cotes</div>
+		<div style="left:1692px; top:-1293px;">cotes</div>
+		<div style="left:1544px; top:-1291px;">cotes</div>
+		<div style="left:1473px; top:-1317px;">cotes</div>
+		<div style="left:1395px; top:-1372px;">cotes</div>
+		<div style="left:1324px; top:-1298px;">cotes</div>
+		<div style="left:1935px; top:-1480px;">embouchure</div>
+		<div style="left:1206px; top:-1318px;">camepement cotier</div>
+		<div style="left:1188px; top:-1387px;">montagnes</div>
+		<div style="left:1060px; top:-1404px;">cotes</div>
+		<div style="left:1214px; top:-1438px;">flambeau</div>
+		<div style="left:1145px; top:-1462px;">lac</div>
+		<div style="left:992px; top:-1340px;">cotes</div>
+		<div style="left:982px; top:-1262px;">cotes</div>
+		<div style="left:1004px; top:-1232px;">cotes</div>
+		<div style="left:964px; top:-1201px;">cotes</div>
+		<div style="left:934px; top:-1142px;">ilot</div>
+		<div style="left:807px; top:-957px;">ilot</div>
+		<div style="left:879px; top:-1204px;">cotes</div>
+		<div style="left:829px; top:-1138px;">cotes</div>
+		<div style="left:885px; top:-1091px;">cotes</div>
+		<div style="left:888px; top:-1042px;">cotes</div>
+		<div style="left:798px; top:-996px;">cotes</div>
+		<div style="left:705px; top:-996px;">cotes</div>
+		<div style="left:727px; top:-866px;">cotes</div>
+		<div style="left:709px; top:-828px;">cotes</div>
+		<div style="left:646px; top:-805px;">banc de sable</div>
+		<div style="left:620px; top:-839px;">cotes</div>
+		<div style="left:575px; top:-737px;">cotes</div>
+		<div style="left:617px; top:-692px;">cotes</div>
+		<div style="left:670px; top:-691px;">ilot</div>
+		<div style="left:605px; top:-629px;">cotes</div>
+		<div style="left:560px; top:-604px;">cotes</div>
+		<div style="left:481px; top:-585px;">cotes</div>
+		<div style="left:429px; top:-594px;">cotes</div>
+		<div style="left:432px; top:-528px;">cotes</div>
+		<div style="left:305px; top:-518px;">cotes</div>
+		<div style="left:161px; top:-561px;">cotes</div>
+		<div style="left:109px; top:-596px;">cotes</div>
+		<div style="left:55px; top:-552px;">cotes</div>
+		<div style="left:-8px; top:-606px;">cotes</div>
+		<div style="left:-80px; top:-511px;">cotes</div>
+		<div style="left:-147px; top:-540px;">cotes+montagne</div>
+		<div style="left:-178px; top:-511px;">cotes</div>
+		<div style="left:-283px; top:-600px;">epave Vorsk</div>
+		<div style="left:-297px; top:-626px;">epave Vorsk</div>
+		<div style="left:-240px; top:-605px;">campement cotier</div>
+		<div style="left:-212px; top:-652px;">camp Vorvask</div>
+		<div style="left:-213px; top:-684px;">avant-poste Duwende</div>
+		<div style="left:-143px; top:-749px;">cotes</div>
+		<div style="left:-280px; top:-720px;">cotes</div>
+		<div style="left:-390px; top:-775px;">cotes</div>
+		<div style="left:-560px; top:-891px;">banc de sable</div>
+		<div style="left:-792px; top:-951px;">temple marin</div>
+		<div style="left:-1010px; top:-945px;">limite</div>
+		<div style="left:-467px; top:-849px;">cotes</div>
+		<div style="left:-353px; top:-952px;">cotes</div>
+		<div style="left:-307px; top:-979px;">cotes</div>
+		<div style="left:-228px; top:-906px;">cotes</div>
+		<div style="left:-176px; top:-809px;">cotes</div>
+		<div style="left:-213px; top:-781px;">cotes</div>
+		<div style="left:-103px; top:-716px;">cotes</div>
+		<div style="left:-76px; top:-769px;">cotes</div>
+		<div style="left:-56px; top:-844px;">débarcadère</div>
+		<div style="left:-24px; top:-883px;">montagne</div>
+		<div style="left:-55px; top:-883px;">accès cité Duwende</div>
+		<div style="left:-94px; top:-983px;">cotes</div>
+		<div style="left:-52px; top:-1031px;">cotes</div>
+		<div style="left:-133px; top:-1086px;">cotes</div>
+		<div style="left:-118px; top:-1140px;">cotes</div>
+		<div style="left:-181px; top:-1200px;">cotes</div>
+		<div style="left:-132px; top:-1226px;">cotes</div>
+		<div style="left:-66px; top:-1267px;">cotes+montagne</div>
+		<div style="left:-60px; top:-1323px;">cotes</div>
+		<div style="left:62px; top:-1300px;">cotes+montagne</div>
+		<div style="left:67px; top:-1420px;">cotes</div>
+		<div style="left:-7px; top:-1481px;">cotes</div>
+		<div style="left:-154px; top:-1567px;">cotes</div>
+		<div style="left:-226px; top:-1552px;">cotes</div>
+		<div style="left:-263px; top:-1500px;">cotes</div>
+		<div style="left:-280px; top:-1532px;">cotes</div>
+		<div style="left:-206px; top:-1650px;">cotes</div>
+		<div style="left:-224px; top:-1680px;">cotes</div>
+		<div style="left:-150px; top:-1654px;">cotes</div>
+		<div style="left:-35px; top:-1738px;">cotes</div>
+		<div style="left:4px; top:-1777px;">cotes</div>
+		<div style="left:-33px; top:-1836px;">cotes</div>
+		<div style="left:-70px; top:-1904px;">cotes</div>
+		<div style="left:-125px; top:-1913px;">cotes</div>
+		<div style="left:-191px; top:-2040px;">cotes</div>
+		<div style="left:-151px; top:-2028px;">cotes</div>
+		<div style="left:-260px; top:-2028px;">cotes</div>
+		<div style="left:-278px; top:-2081px;">cotes</div>
+		<div style="left:-281px; top:-2133px;">cotes</div>
+		<div style="left:-242px; top:-2210px;">cotes</div>
+		<div style="left:-322px; top:-2327px;">cotes</div>
+		<div style="left:-400px; top:-2560px;">limite + cotes</div>
+		<div style="left:-238px; top:-2585px;">limite + cotes</div>
+		<div style="left:76px; top:-2682px;">limite + cotes</div>
+		<div style="left:514px; top:-2468px;">fleuve + limite</div>
+		<div style="left:711px; top:-2450px;">fleuve + limite</div>
+		<div style="left:648px; top:-2354px;">fleuve branche</div>
+		<div style="left:736px; top:-2207px;">fleuve branche</div>
+		<div style="left:736px; top:-2131px;">fleuve branche</div>
+		<div style="left:641px; top:-1773px;">fleuve branche</div>
+		<div style="left:677px; top:-2241px;">fleuve</div>
+		<div style="left:789px; top:-2229px;">fleuve</div>
+		<div style="left:842px; top:-2137px;">fleuve</div>
+		<div style="left:935px; top:-2103px;">fleuve</div>
+		<div style="left:844px; top:-1930px;">fleuve</div>
+		<div style="left:721px; top:-1882px;">fleuve</div>
+		<div style="left:595px; top:-1835px;">fleuve - lac</div>
+		<div style="left:556px; top:-1821px;">débarcadère gobelin</div>
+		<div style="left:521; top:-1830;">Chénou dans Gronarb</div>
+		<div style="left:663px; top:-1732px;">fleuve</div>
+		<div style="left:730px; top:-1678px;">fleuve branche</div>
+		<div style="left:615px; top:-1612px;">fleuve branche</div>
+		<div style="left:508px; top:-1665px;">fleuve - lac</div>
+		<div style="left:591px; top:-1553px;">fleuve</div>
+		<div style="left:619px; top:-1469px;">fleuve</div>
+		<div style="left:525px; top:-1439px;">fleuve</div>
+		<div style="left:418px; top:-1390px;">fleuve</div>
+		<div style="left:349px; top:-1274px;">fleuve-canyon</div>
+		<div style="left:323px; top:-1133px;">fleuve-cascade</div>
+		<div style="left:228px; top:-1023px;">cité Duwende</div>
+		<div style="left:412px; top:-1030px;">ile volante</div>
+		<div style="left:812px; top:-1652px;">fleuve</div>
+		<div style="left:1044px; top:-1637px;">fleuve</div>
+		<div style="left:1044px; top:-1637px;">fleuve</div>
+		<div style="left:1272px; top:-1575px;">fleuve+source</div>
+		<div style="left:1201px; top:-1554px;">fleuve branche</div>
+		<div style="left:1218px; top:-1605px;">fleuve branche</div>
+		<div style="left:1188px; top:-1668px;">fleuve+source</div>
+		<div style="left:1246px; top:-1634px;">fleuve branche</div>
+		<div style="left:1300px; top:-1654px;">fleuve+source</div>
+		<div style="left:1254px; top:-1700px;">fleuve branche</div>
+		<div style="left:1221px; top:-1749px;">fleuve+source</div>
+		<div style="left:1332px; top:-1713px;">fleuve branche</div>
+		<div style="left:1370px; top:-1683px;">fleuve+source</div>
+		<div style="left:1371px; top:-1758px;">fleuve+source</div>
+		<div style="left:1326px; top:-1770px;">fleuve</div>
+		<div style="left:1360px; top:-1845px;">source+sanctuaire</div>
+		<div style="left:881px; top:-2007px;">fleuve</div>
+		<div style="left:693px; top:-2047px;">fleuve branche</div>
+		<div style="left:696px; top:-1966px;">fleuve - lac</div>
+		<div style="left:620px; top:-2033px;">fleuve branche</div>
+		<div style="left:664px; top:-2173px;">fleuve - lac</div>
+		<div style="left:606px; top:-2164px;">fleuve - lac</div>
+		<div style="left:593px; top:-2095px;">fleuve</div>
+		<div style="left:541px; top:-2014px;">fleuve branche</div>
+		<div style="left:511px; top:-1950px;">fleuve - lac</div>
+		<div style="left:460px; top:-2044px;">fleuve branche</div>
+		<div style="left:386px; top:-2000px;">fleuve</div>
+		<div style="left:318px; top:-2078px;">fleuve</div>
+		<div style="left:226px; top:-2087px;">fleuve branche</div>
+		<div style="left:200px; top:-2046px;">fleuve</div>
+		<div style="left:200px; top:-1893px;">fleuve</div>
+		<div style="left:276px; top:-1843px;">fleuve branche</div>
+		<div style="left:363px; top:-1783px;">fleuve branche</div>
+		<div style="left:425px; top:-1879px;">fleuve - lac</div>
+		<div style="left:300px; top:-1763px;">fleuve</div>
+		<div style="left:350px; top:-1737px;">fleuve branche</div>
+		<div style="left:327px; top:-1772px;">ilot</div>
+		<div style="left:319px; top:-1686px;">fleuve</div>
+		<div style="left:241px; top:-1638px;">fleuve</div>
+		<div style="left:192px; top:-1600px;">fleuve</div>
+		<div style="left:148x; top:-1625px;">fleuve-cascade</div>
+		<div style="left:193px; top:-2114px;">fleuve</div>
+		<div style="left:24px; top:-2243px;">fleuve</div>
+		<div style="left:108px; top:-2312px;">fleuve</div>
+		<div style="left:174px; top:-2418px;">source+campement</div>
+		<div style="left:-9px; top:-2410px;">campement</div>
+		<div style="left:52px; top:-2476px;">mesa</div>
+		<div style="left:86px; top:-2523px;">mesa</div>
+		<div style="left:191px; top:-2561px;">mesa</div>
+		<div style="left:204px; top:-2507px;">mine mesa</div>
+		<div style="left:251px; top:-2470px;">mesa</div>
+		<div style="left:265px; top:-2600px;">mesa</div>
+		<div style="left:317px; top:-2560px;">mesa</div>
+		<div style="left:336px; top:-2482px;">mesa</div>
+		<div style="left:300px; top:-2483px;">mesa</div>
+		<div style="left:355px; top:-2440px;">mesa</div>
+		<div style="left:280px; top:-2400px;">mesa</div>
+		<div style="left:220px; top:-2318px;">mesa</div>
+		<div style="left:410px; top:-2123px;">fleuve - lac</div>
+		<div style="left:856px; top:-2196px;">fleuve</div>
+		<div style="left:858px; top:-2295px;">fleuve branche</div>
+		<div style="left:794px; top:-2343px;">fleuve</div>
+		<div style="left:852px; top:-2260px;">fleuve</div>
+		<div style="left:900px; top:-2311px;">fleuve</div>
+		<div style="left:914px; top:-2380px;">fleuve</div>
+		<div style="left:945px; top:-2429px;">fleuve + limite</div>
+		<div style="left:853px; top:-2485px;">fleuve + limite</div>
+		<div style="left:759px; top:-2409px;">fleuve + limite +branche</div>
+		<div style="left:853px; top:-2485px;">fleuve + limite</div>
+		<div style="left:1018px; top:-2380px;">fleuve</div>
+		<div style="left:1082px; top:-2380px;">limite</div>
+		<div style="left:1074px; top:-2288px;">fleuve</div>
+		<div style="left:1160px; top:-2277px;">fleuve</div>
+		<div style="left:1215px; top:-2142px;">fleuve</div>
+		<div style="left:1318px; top:-2060px;">fleuve</div>
+		<div style="left:1388px; top:-2124px;">fleuve</div>
+		<div style="left:1442px; top:-2207px;">limite</div>
+		<div style="left:1436px; top:-2194px;">fleuve</div>
+		<div style="left:1503px; top:-2111px;">fleuve</div>
+		<div style="left:1624px; top:-2093px;">fleuve</div>
+		<div style="left:1734px; top:-1772px;">fleuve</div>
+		<div style="left:1761px; top:-1858px;">fleuve</div>
+		<div style="left:1900px; top:-1866px;">fleuve</div>
+		<div style="left:1885px; top:-1949px;">fleuve + SOURCE TODO</div>
+		<div style="left:1727px; top:-1733px;">fleuve</div>
+		<div style="left:1641px; top:-1651px;">fleuve</div>
+		<div style="left:1685px; top:-1534px;">fleuve</div>
+		<div style="left:1705px; top:-1432px;">fleuve</div>
+		<div style="left:1861px; top:-1514px;">fleuve</div>
+		<div style="left:2237px; top:-949px;">limite</div>
+		<div style="left:1855px; top:-627px;">limite</div>
+		<div style="left:1354px; top:-370px;">limite</div>
+		<div style="left:1239px; top:-315px;">temple marin</div>
+		<div style="left:1174px; top:-271px;">limite</div>
+		<div style="left:1258px; top:175px;">limite</div>
+		<div style="left:581px; top:-96px;">banc de sable</div>
+		<!--NORD zone centrale-->
+		<div style="left:287px; top:-137px;">cotes</div>
+		<div style="left:231px; top:-111px;">autel</div>
+		<div style="left:110px; top:-115px;">embouchure</div>
+		<div style="left:59px; top:-249px;">cotes</div>
+		<div style="left:133px; top:-295px;">banc de sable</div>
+		<div style="left:-58px; top:-189px;">cotes</div>
+		<!--end maj-->
+		<div style="left:-1122px; top:-436px;">limite</div>
+		<div style="left:-525px; top:-578px;">banc de sable</div>
+		<div style="left:-396px; top:-530px;">banc de sable</div>
+		<div style="left:49px; top:-707px;">mini marais</div>
+		<div style="left:80px; top:-735px;">montagne</div>
+		<div style="left:116px; top:-768px;">montagne</div>
+		<div style="left:80px; top:-792px;">montagne</div>
+		<div style="left:54px; top:-755px;">montagne</div>
+		<div style="left:83px; top:-762px;">flambeau</div>
+		<div style="left:1px; top:-828px;">montagne</div>
+		<div style="left:-67px; top:-979px;">montagne</div>
+		<div style="left:-150px; top:-1032px;">cotes</div>
+		<div style="left:-176px; top:-1035px;">cotes</div>
+		<div style="left:-203px; top:-991px;">cotes</div>
+		<div style="left:-307px; top:-932px;">montagne</div>
+		<div style="left:-375px; top:-845px;">montagne</div>
+		<div style="left:-300px; top:-772px;">montagne</div>
+		<div style="left:-300px; top:-850px;">vallée close</div>
+		<div style="left:-242px; top:-834px;">montagne</div>
+		
+		<div style="left:-272px; top:-1017px;">cotes</div>
+		<div style="left:-270px; top:-1092px;">cotes</div>
+		<div style="left:-220px; top:-1046px;">cotes</div>
+		
+		<div style="left:-185px; top:-1141px;">cotes</div>
+		<div style="left:-223px; top:-1131px;">cotes</div>
+		<div style="left:-207px; top:-1100px;">cotes</div>
+		
+		<div style="left:-257px; top:-1169px;">cotes</div>
+		<div style="left:-282px; top:-1215px;">cotes</div>
+		<div style="left:-257px; top:-1303px;">cotes</div>
+		<div style="left:-297px; top:-1453px;">cotes</div>
+		<div style="left:-216px; top:-1270px;">cotes</div>
+		
+		<div style="left:-152px; top:-1275px;">cotes</div>
+		<div style="left:-125px; top:-1302px;">cotes</div>
+		<div style="left:-143px; top:-1389px;">cotes</div>
+		<div style="left:-190px; top:-1321px;">cotes</div>
+		
+		<div style="left:-872px; top:-1654px;">limite</div>
+		<div style="left:-469px; top:-1765px;">banc de sable</div>
+		
+		<div style="left:-175px; top:-2340px;">montagne</div>
+		<div style="left:-143px; top:-2206px;">montagne</div>
+		<div style="left:-160px; top:-2136px;">montagne</div>
+		<div style="left:-105px; top:-2090px;">montagne</div>
+		<div style="left:-28px; top:-2008px;">montagne</div>
+		<div style="left:57px; top:-1925px;">montagne</div>
+		<div style="left:128px; top:-2042px;">lac</div>
+		<div style="left:110px; top:-1988px;">montagne</div>
+		<div style="left:145px; top:-2087px;">montagne</div>
+		<div style="left:80px; top:-2116px;">lac</div>
+		<div style="left:-5px; top:-2142px;">montagne</div>
+		<div style="left:-90px; top:-2215px;">montagne</div>
+		<div style="left:-116px; top:-2346px;">montagne</div>
+		<div style="left:-120px; top:-2381px;">flambeau</div>
+		<div style="left:-139px; top:-2414px;">montagne</div>
+		
+		<div style="left:-64px; top:-2394px;">montagne</div>
+		<div style="left:1px; top:-2335px;">montagne</div>
+		<div style="left:146px; top:-2301px;">montagne</div>
+		<div style="left:177px; top:-2175px;">montagne</div>
+		<div style="left:317px; top:-2236px;">montagne</div>
+		<div style="left:362px; top:-2211px;">montagne</div>
+		<div style="left:403px; top:-2262px;">montagne</div>
+		<div style="left:426px; top:-2262px;">montagne</div>
+		<div style="left:437px; top:-2375px;">montagne</div>
+		<div style="left:444px; top:-2484px;">montagne</div>
+		
+		<div style="left:468px; top:-2339px;">montagne</div>
+		
+		<div style="left:1071px; top:-1818px;">montagne</div>
+		
+		<div style="left:1114px; top:-1921px;">montagne</div>
+		<div style="left:1197px; top:-1909px;">montagne</div>
+		<div style="left:1268px; top:-1958px;">montagne</div>
+		<div style="left:1240px; top:-2049px;">montagne</div>
+		<div style="left:1166px; top:-2115px;">montagne</div>
+		<div style="left:1100px; top:-2142px;">montagne</div>
+		<div style="left:1051px; top:-2004px;">montagne</div>
+		
+		<div style="left:1391px; top:-1966px;">montagne</div>
+		<div style="left:1445px; top:-1952px;">montagne</div>
+		
+		<div style="left:1524px; top:-1698px;">montagne</div>
+		<div style="left:1468px; top:-1600px;">montagne</div>
+		<div style="left:1440px; top:-1555px;">montagne</div>
+		<div style="left:1500px; top:-1470px;">montagne</div>
+		
+		<div style="left:1704px; top:-1207px;">cotes</div>
+		<div style="left:1714px; top:-1175px;">cotes</div>
+		<div style="left:1668px; top:-1126px;">cotes</div>
+		<div style="left:1643px; top:-1170px;">cotes</div>
+		
+		<div style="left:1794px; top:-1165px;">cotes</div>
+		<div style="left:1736px; top:-1136px;">cotes</div>
+		<div style="left:1775px; top:-1110px;">cotes</div>
+		<div style="left:1762px; top:-1151px;">cotes</div>
+		
+		<div style="left:1706px; top:-1089px;">cotes</div>
+		<div style="left:1680px; top:-1038px;">cotes</div>
+		<div style="left:1658px; top:-1055px;">cotes</div>
+		
+		<div style="left:1622px; top:-1115px;">cotes</div>
+		<div style="left:1553px; top:-1119px;">cotes</div>
+		<div style="left:1539px; top:-1070px;">cotes</div>
+		<div style="left:1514px; top:-1061px;">cotes</div>
+		
+		<div style="left:1434px; top:-1124px;">cotes</div>
+		<div style="left:1438px; top:-1106px;">cotes</div>
+		<div style="left:1382px; top:-1029px;">cotes</div>
+		<div style="left:1303px; top:-1054px;">cotes</div>
+		<div style="left:1348px; top:-1118px;">cotes</div>
+		
+		<div style="left:1336px; top:-1185px;">cotes</div>
+		<div style="left:1281px; top:-1251px;">cotes</div>
+		<div style="left:1278px; top:-1190px;">cotes</div>
+		
+		<div style="left:1177px; top:-1135px;">porte close</div>
+		<div style="left:1175px; top:-1161px;">cotes</div>
+		<div style="left:1084px; top:-1130px;">cotes</div>
+		<div style="left:1000px; top:-1092px;">cotes</div>
+		<div style="left:993px; top:-1023px;">cotes</div>
+		<div style="left:1076px; top:-974px;">cotes</div>
+		<div style="left:1123px; top:-991px;">cotes</div>
+		<div style="left:1154px; top:-1079px;">vallé close</div>
+		<div style="left:1170px; top:-933px;">cotes</div>
+		<div style="left:1259px; top:-1082px;">cotes</div>
+		
+		<div style="left:1078px; top:-1285px;">cotes</div>
+		<div style="left:1113px; top:-1221px;">cotes</div>
+		<div style="left:1092px; top:-1196px;">cotes</div>
+		<div style="left:1052px; top:-1245px;">cotes</div>
+		
+		<div style="left:911px; top:-1003px;">cotes</div>
+		<div style="left:863px; top:-966px;">cotes</div>
+		<div style="left:925px; top:-945px;">cotes</div>
+		<div style="left:844px; top:-905px;">cotes</div>
+		<div style="left:914px; top:-841px;">cotes</div>
+		<div style="left:868px; top:-839px;">cotes</div>
+		<div style="left:813px; top:-819px;">cotes</div>
+		
+		<div style="left:779px; top:-773px;">cotes</div>
+		<div style="left:803px; top:-737px;">cotes</div>
+		<div style="left:782px; top:-698px;">cotes</div>
+		<div style="left:721px; top:-697px;">cotes</div>
+		<div style="left:748px; top:-741px;">chantier naval gobelin</div>
+		
+		<div style="left:-102px; top:-372px;">banc de sable</div>
+		<div style="left:753px; top:471px;">fort Durn</div>
+		<div style="left:969px; top:963px;">chantier naval et port Durn</div>
+		
+		<div style="left:854px; top:-780px;">cotes</div>
+		<div style="left:913px; top:-752px;">cotes</div>
+		<div style="left:893px; top:-728px;">cotes</div>
+		<div style="left:860px; top:-741px;">cotes</div>
+		
+		<div style="left:997px; top:-806px;">banc de sable</div>
+		
+		<div style="left:979px; top:-831px;">cotes</div>
+		<div style="left:940px; top:-897px;">cotes</div>
+		<div style="left:1001px; top:-931px;">cotes</div>
+		<div style="left:1012px; top:-901px;">cotes</div>
+		
+		<div style="left:1544px; top:-1453px;">podzol</div>
+		<div style="left:1596px; top:-1559px;">podzol</div>
+		<div style="left:1480px; top:-1626px;">podzol</div>
+		
+		<div style="left:1536px; top:-1716px;">podzol+montagnes</div>
+		<div style="left:1590px; top:-1855px;">montagnes</div>
+		<div style="left:1940px; top:-1862px;">montagnes</div>
+		<!--SUD-->
+		<div style="left:565px; top:2167px;">temple jungle</div>
+		
+		<img id="central" src="img/carteBG.jpg"/>
+		<img id="north" src="img/carte nord.jpg"/>
+	</div>
+
+    <!--<script src="js/scriptRoll.js"></script>
+	http://tiny.cc/4hs6jy
+	-->
+</body>
+
+</html>

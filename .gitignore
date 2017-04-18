@@ -1,0 +1,6 @@
+#ignore aperçus créés par Windows
+Thumbs.db
+SAVE/
+*.psd
+*.txt
+backoffice/crypt/
