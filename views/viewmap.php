@@ -18,15 +18,13 @@ include("functions/toolbox.php");
 				<li><img src ="img/star-18.png"/> Emplacement potentiel de construction</li>
 				<li><img src ="img/circle-stroked-18.png"/>Tracé de fleuve ou lac</li>
 				<li><img src ="img/limite.png"/>Limite de map</li>
-				<li><img src ="img/route.png"/>Ouvrage civil (pont,tunnel...)</li>
-				
+				<li><img src ="img/route.png"/>Ouvrage civil (pont,tunnel...)</li>				
 			</ul>
 			<h3>Où suis-je ?</h3>
 			<p>
 				Entrez vos coordonnés pour vous localiser sur la carte.<br/>
 				<label>X</label> : <input type="number" name="xPosition" id="xPosition" placeholder="0" value="0"/><br/>
-				<label>Z</label> : <input type="number" name="yPosition" id="yPosition" placeholder="0" value="0"/>
-				
+				<label>Z</label> : <input type="number" name="yPosition" id="yPosition" placeholder="0" value="0"/>	
 			</p>
 			<p>
 				<img src ="img/boussole.png"/><br/>
@@ -49,7 +47,7 @@ include("functions/toolbox.php");
 			map.fitBounds(mapBounds(5000*mult,5833*mult,[-3970,-700]));
 
 			<?php
-			$classes =["lieu","ruines","limite","biome","emplacement","fleuve"];
+			$classes =["lieu","ruines","limite","biome","emplacement","fleuve","route"];
 			foreach ($classes as $value){
 				printMarker($value);
 			}
@@ -61,9 +59,9 @@ include("functions/toolbox.php");
 				"Nature": biomeX,
 				"Emplacements":emplacementX,
 				"Fleuves":fleuveX
+				"Route":routeX
 			};
-			L.control.layers(null,overlays).addTo(map);
-			
+			L.control.layers(null,overlays).addTo(map);			
 			<?php
 			foreach ($classes  as $value){
 				echo $value."X.addTo(map);";
