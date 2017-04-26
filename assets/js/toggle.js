@@ -5,12 +5,12 @@ function toggle(trigger,container)
         case true:
             triggerState = false;
             container.style.display="none";
-            trigger.style.backgroundImage="url('img/ic_expand_more_black_18dp.png')";
+            trigger.style.backgroundImage="url('./assets/img/ic_expand_more_black_18dp.png')";
         break;
         case false:
             triggerState = true;
             container.style.display="block";
-            trigger.style.backgroundImage="url('img/ic_expand_less_black_18dp.png')";
+            trigger.style.backgroundImage="url('./assets/img/ic_expand_less_black_18dp.png')";
         break;
     }
 }

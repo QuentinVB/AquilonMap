@@ -3,7 +3,7 @@
 	include("./models/model.php");
 	$reponse = getLastDate(); 
 	$date = $reponse->fetch();
-    include("views/viewmap.php");
+    include("./views/map.php");
 ?>
 
 

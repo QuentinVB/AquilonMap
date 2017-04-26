@@ -8,6 +8,5 @@
 
 	deleteMarker($id,$x,$y);
 
-	header('Location: ./backoffice.php?succes=0', true, 302);
-	exit;
+	header('Location: ./index.php?page=backoffice&succes=delete');
 ?>
