@@ -23,8 +23,8 @@ body
 nav
 {
 	position:fixed;
-	right:20px;
-	top:180px;
+	right:0px;
+	top:0px;
 	border : solid black 1px;
 	max-width:300px;
 	z-index:1200;
@@ -75,4 +75,20 @@ td
 {
 	border:1px solid black;
 	padding:2px;
+}
+.toggleableMenu span
+{
+	position:absolute;
+	top:0px;
+	right:0px;
+	background-image:url('ic_expand_less_black_18dp.png') right top repeat;
+	background-color:#c2a30f;
+	display:inline-block;	
+	height:36px;
+	width:36px;
+}
+.leaflet-top.leaflet-right
+{
+	margin-right:280px;
+	margin-top:0px;
 }
