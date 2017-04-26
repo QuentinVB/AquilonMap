@@ -34,7 +34,7 @@ var limite = L.icon({
 });
 
 var route = L.icon({
-    iconUrl: 'img/route.png',
+    iconUrl: 'img/road.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 

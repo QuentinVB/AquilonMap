@@ -2,12 +2,12 @@
 //save
 	include("../models/model.php");
 	
-	$name = strip_tags($_GET['name']);
+	$id = strip_tags($_GET['id']);
 	$x = strip_tags($_GET['x']);
 	$y = strip_tags( $_GET['y']);
 
-	deleteMarker($name,$x,$y,$classes);
+	deleteMarker($id,$x,$y);
 
-	header('Location: http://les-planetes2kentin.fr/AquilonMap/backoffice/backoffice.php?succes=0', true, 302);
+	header('Location: backoffice.php?succes=0', true, 302);
 	exit;
 ?>

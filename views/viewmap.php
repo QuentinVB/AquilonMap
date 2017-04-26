@@ -9,7 +9,7 @@ include("functions/toolbox.php");
 			<span>&nbsp;	</span>
 			<div>
 				<ul>
-					<li><a href="backoffice/backoffice.php">Ajouter/Editer Marqueur</a></li>
+					<li><a href="backoffice/backoffice.php">Connexion</a></li>
 					<li>Dernière mise à jour : <?php echo $date[0]; ?></li>
 				</ul>	
 				<h3>Legende</h3>
@@ -20,7 +20,7 @@ include("functions/toolbox.php");
 					<li><img src ="img/star-18.png"/> Emplacement potentiel de construction</li>
 					<li><img src ="img/circle-stroked-18.png"/>Tracé de fleuve ou lac</li>
 					<li><img src ="img/limite.png"/>Limite de map</li>
-					<li><img src ="img/route.png"/>Ouvrage civil (pont,tunnel...)</li>				
+					<li><img src ="img/road.png"/>Ouvrage civil (pont,tunnel...)</li>				
 				</ul>
 				<h3>Où suis-je ?</h3>
 				<p>
@@ -76,7 +76,7 @@ include("functions/toolbox.php");
 			//L.control.map.setView([0, 0], -1);
 					
 		</script>
-		<script src="js/location2.js"></script>
+		<script src="js/location.js"></script>
 		<script src="js/toggle.js"></script>
     </body>
 	

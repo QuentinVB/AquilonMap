@@ -18,7 +18,7 @@ include("../controlers/controler.php");
 		</nav>
 		<h1>Map Managment</h1>
 		<section>
-			<h2>Ajouter un lieu</h1>
+			<h2>Ajouter un lieu</h2>
 			<form method="post" action="save.php">				
 				<p>
 					<label for="name">Nom du lieu</label> : <input type="text" name="name" id="name" /><br/>
@@ -66,7 +66,7 @@ include("../controlers/controler.php");
 						<td>
 							<a><img src="../img/pencil.png"/>modifier</a>
 							&nbsp;
-							<a href="delete.php?name=<?php echo $datamarker['name']; ?>&amp;x=<?php echo $datamarker['x']; ?>&amp;y=<?php echo $datamarker['y']; ?>" onclick="return confirm(\'Etes-vous sûr ?\');"><img src="../img/delete.png"/>effacer</a>
+							<a href="delete.php?id=<?php echo $datamarker['id']; ?>&amp;x=<?php echo $datamarker['x']; ?>&amp;y=<?php echo $datamarker['y']; ?>" onclick="return confirm('Confirmer suppression ?')"><img src="../img/delete.png"/> effacer</a>
 						</td>
 					</tr>
 					<?php
@@ -74,8 +74,6 @@ include("../controlers/controler.php");
 					?>
 				</tbody>
 			</table>
-		
-
 		</section>
     </body>
 <?php

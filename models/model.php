@@ -34,12 +34,12 @@
 		'classes' => $classes
 		));
 	}
-	function deleteMarker($name, $x,$y)
+	function deleteMarker($id, $x,$y)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("DELETE FROM `cartedata` WHERE `cartedata`.`name` = :name AND `cartedata`.`x` = :x AND `cartedata`.`y` = :y");	
+		$req = $bdd->prepare("DELETE FROM `cartedata` WHERE `cartedata`.`id` = :id AND `cartedata`.`x` = :x AND `cartedata`.`y` = :y");	
 		$req -> execute(array(
-		'name' => $name,
+		'id' => $id,
 		'x' => $x,
 		'y' => $y
 		));

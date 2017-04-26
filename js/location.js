@@ -3,9 +3,11 @@ var ySend = document.getElementById("yPosition").value;
 
 function setPosition(x,y)
 {
-    var elements = document.getElementById("location");
-    elements.style.top = y+"px";
-    elements.style.left = x+"px";   
+    if(x==undefined) {x=0;}
+    if(y==undefined) {y=0;}
+    x=x-7;
+    y=y-7;
+    pointer.setLatLng(leafConvert([x,y]));   
 }
 document.getElementById("xPosition").addEventListener("input", function (e) { 
         xSend = document.getElementById("xPosition").value;
