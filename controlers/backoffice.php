@@ -3,7 +3,15 @@
 	include("./models/model.php");
 	$reponse = getLastDate(); 
 	$date = $reponse->fetch();
-    include("./views/backoffice.php");
+
+	if(empty($_SESSION['token']))
+	{
+		header('Location: ./index.php?page=auth');
+	}
+	else
+	{
+	    include("./views/backoffice.php");	
+	}
 ?>
 
 

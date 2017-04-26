@@ -28,6 +28,7 @@
 				
 				?></h2><?php
 			} ?>	
+			
 	</nav>
 	<h1>Map Managment</h1>
 	<section id="EditPanel" class="popUp">
