@@ -6,5 +6,6 @@
 	$y = strip_tags( $_POST['y']);
 	$classes = strip_tags( $_POST['classes']);
 	editMarker($id,$name,$x,$y,$classes);
+	
 	header("Location: backoffice.php?succes=0");
 ?>
