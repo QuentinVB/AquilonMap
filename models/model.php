@@ -1,6 +1,6 @@
 <?php
 //model
-	include("functions/database_connexion.php");
+	include("../functions/database_connexion.php");
 	function getMarkers()
 	{
 		$bdd = connexion_database();
@@ -28,6 +28,18 @@
 		$bdd = connexion_database();
 		$req = $bdd->prepare("INSERT INTO `cartedata` (`id`, `name`, `x`, `y`, `classes`, `date_ajout`) VALUES (NULL, :name, :x, :y, :classes, NOW())");	
 		$req -> execute(array(
+		'name' => $name,
+		'x' => $x,
+		'y' => $y,
+		'classes' => $classes
+		));
+	}
+	function editMarker($id, $name, $x,$y,$classes)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("UPDATE `cartedata` SET `name` = :name, `x` = :x, `y` = :y, `classes` = :classes, `date_ajout` = NOW() WHERE `cartedata`.`id` = :id; ");	
+		$req -> execute(array(
+		'id' => $id,
 		'name' => $name,
 		'x' => $x,
 		'y' => $y,

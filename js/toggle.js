@@ -24,8 +24,6 @@ for (var index = 0; index < menu.length; index++) {
     var triggerState = false;
     trigger.addEventListener("click", function (e) {             
             toggle(trigger,container);
-            //xSend = document.getElementById("xPosition").value;
-            //setPosition(xSend,ySend);
         }
     );
     toggle(trigger,container);

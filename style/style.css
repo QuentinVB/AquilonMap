@@ -38,6 +38,9 @@ section
 	width:50%;
 	margin:auto;
 	background-color:lightgrey;
+	position:relative;
+	padding:5px;
+	margin-top:5px;
 }
 nav ul
 {
@@ -81,7 +84,7 @@ td
 	position:absolute;
 	top:0px;
 	right:0px;
-	background-image:url('ic_expand_less_black_18dp.png') right top repeat;
+	background-image:url('../img/ic_expand_less_black_18dp.png') right top no-repeat;
 	background-color:#c2a30f;
 	display:inline-block;	
 	height:36px;
@@ -91,4 +94,18 @@ td
 {
 	margin-right:280px;
 	margin-top:0px;
+}
+.popUp span
+{
+	position:absolute;
+	top:0px;
+	right:0px;
+	background-image:url("../img/ic_cancel_black_18dp.png");	
+	display:inline-block;
+	height:36px;
+	width:36px;
+}
+.popUp
+{
+	display:none;
 }
