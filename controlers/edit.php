@@ -1,5 +1,5 @@
 <?php
-	include("../models/model.php");
+	include("./models/model.php");
 	$id = strip_tags($_POST['id']);
 	$name = strip_tags($_POST['name']);
 	$x = strip_tags($_POST['x']);
@@ -7,5 +7,5 @@
 	$classes = strip_tags( $_POST['classes']);
 	editMarker($id,$name,$x,$y,$classes);
 	
-	header("Location: backoffice.php?succes=0");
+	header("Location: ./backoffice.php?succes=0");
 ?>

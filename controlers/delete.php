@@ -1,6 +1,6 @@
 <?php
 //save
-	include("../models/model.php");
+	include("./models/model.php");
 	
 	$id = strip_tags($_GET['id']);
 	$x = strip_tags($_GET['x']);
@@ -8,6 +8,6 @@
 
 	deleteMarker($id,$x,$y);
 
-	header('Location: backoffice.php?succes=0', true, 302);
+	header('Location: ./backoffice.php?succes=0', true, 302);
 	exit;
 ?>

@@ -7,9 +7,18 @@
          <link rel="stylesheet" href="style/style.css" type="text/css"/>
          <link rel="shortcut icon" href="img/map.ico">
 
-        <title>Carte</title>
+        <title>Aquilon-Map</title>
     </head>
-<?php
-	include("views/viewmap.php");
-?>
+    <?php
+    if (!empty($_POST['page']) && is_file('./controlers/' . $_POST['page'] . '.php')) 
+    {
+
+    }
+    else if (!empty($_GET['page']) && is_file('./Controler/' . $_GET['page'] . '.php')) {
+    {
+    else
+    {
+        include("controlers/map.php");
+    }     
+    ?>
 </html>

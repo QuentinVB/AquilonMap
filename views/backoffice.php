@@ -1,7 +1,7 @@
 <?php
 //view
 
-include("../controlers/controler.php");
+include("./controlers/controler.php");
 
 ?>
 <body>
@@ -43,7 +43,7 @@ include("../controlers/controler.php");
 	</section>
 	<section>
 		<h2>Ajouter un lieu</h2>
-		<form method="post" action="save.php">
+		<form method="post" action="add.php">
 			<p>
 				<label for="name">Nom du lieu</label> : <input type="text" name="name" id="name" required/><br/>
 				<label for="x">Coordonné X </label> : <input type="text" name="x" id="x" size="9" placeholder="east/west" required/><br/>
