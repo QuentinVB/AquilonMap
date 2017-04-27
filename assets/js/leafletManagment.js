@@ -1,54 +1,54 @@
 var lieu = L.icon({
-    iconUrl: 'img/square-18.png',
+    iconUrl: './assets/img/square-18.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0,0] 
 });
 
 var biome = L.icon({
-    iconUrl: 'img/park2-18.png',
+    iconUrl: './assets/img/park2-18.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var emplacement = L.icon({
-    iconUrl: 'img/star-18.png',
+    iconUrl: './assets/img/star-18.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var fleuve = L.icon({
-    iconUrl: 'img/circle-stroked-18.png',
+    iconUrl: './assets/img/circle-stroked-18.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var limite = L.icon({
-    iconUrl: 'img/limite.png',
+    iconUrl: './assets/img/limite.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var route = L.icon({
-    iconUrl: 'img/route.png',
+    iconUrl: './assets/img/road.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var ruines = L.icon({
-    iconUrl: 'img/monument-18.png',
+    iconUrl: './assets/img/monument-18.png',
     iconSize:     [18, 18], 
     iconAnchor:   [10, 10], 
     popupAnchor:  [0, 0] 
 });
 
 var pointer = L.icon({
-    iconUrl: 'img/location.gif',
+    iconUrl: './assets/img/location.gif',
     iconSize:     [15, 15], 
     iconAnchor:   [0, 0], 
     popupAnchor:  [9, 9] 
