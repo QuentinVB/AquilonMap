@@ -7,5 +7,5 @@
 	$y = strip_tags( $_POST['y']);
 	$classes = strip_tags( $_POST['classes']);
 	editMarker($id,$name,$x,$y,$classes);
-	header("Location: ./index.php?page=backoffice&succes=edit");
+	header("Location: ./index.php?page=backoffice&msg=edit");
 ?>

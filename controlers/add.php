@@ -7,5 +7,5 @@
 	$classes = strip_tags( $_POST['classes']);
 	addMarker($name,$x,$y,$classes);
 
-	header("Location: ./index.php?page=backoffice&succes=add");
+	header("Location: ./index.php?page=backoffice&msg=add");
 ?>

@@ -7,27 +7,7 @@
 			<li><a href="index.php">Retourner à la carte</a></li>
 			<li>Dernière mise à jour : <?php echo $date[0]; ?></li>
 		</ul>	
-		<?php 
-			if(isset($_GET['succes']) && $_GET['succes'] == 0)
-			{
-				?><h2><?php
-				switch ($_GET['succes']) {
-					case 'add':
-						echo "Ajout réussi !";
-						break;					
-					case 'delete':
-						echo "Suppression réussie !";
-						break;
-					case 'edit':
-						echo "Edition réussie !";
-						break;
-					default:
-						echo "yup !";
-						break;
-				}
-				
-				?></h2><?php
-			} ?>	
+		<h2><?php echo $msg;?></h2>
 			
 	</nav>
 	<h1>Map Managment</h1>
