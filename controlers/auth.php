@@ -1,7 +1,8 @@
 <?php
 //controler
 	include("./models/auth.php");
-    $msg = "";
+	include("./controlers/msgmanager.php");
+    
     if(isset($_POST['username']) && isset($_POST['password']))
     {
         //CONNECTION LOGIC HERE
