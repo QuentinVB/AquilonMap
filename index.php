@@ -22,7 +22,9 @@
     }
     else
     {
-        if (!empty ($_SESSION['pseudo'])) {
+        echo "EXTERMINATE ?";
+        if (empty($_SESSION['userName'])) {
+            echo "FUCK YEAH EXTERMINATE !";
             session_unset();
             session_destroy();
         };
