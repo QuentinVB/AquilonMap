@@ -39,6 +39,7 @@
 		'rightsLevel' => $rightsLevel
 		));
 	}
+	//NOPE
 	function editUser($id, $name, $x,$y,$classes)
 	{
 		$bdd = connexion_database();
@@ -51,6 +52,7 @@
 		'classes' => $classes
 		));
 	}
+	//NOPE
 	function deleteUser($id, $x,$y)
 	{
 		$bdd = connexion_database();

@@ -2,14 +2,13 @@
 //view
 ?>
 <body>
-	<nav id="data">
+	<nav>
 		<ul>
-			<li><a href="index.php">Retourner à la carte</a></li>
-			<li><a href="index.php?page=disconnect">Deconnecter la session</a></li>
-			<li>Dernière mise à jour : <?php echo $date[0]; ?></li>
-		</ul>	
-		<h2><?php echo $msg;?></h2>
-			
+			<li><a href="index.php">Retour</a></li>
+			<li><a href="index.php?page=disconnect">Deconnexion</a></li>
+		</ul>
+		<p>Dernière mise à jour : <?php echo $date[0]; ?></p>
+		<h2><?php echo $msg;?></h2>			
 	</nav>
 	<h1>Map Managment</h1>
 	<?php
@@ -18,7 +17,6 @@
 		?>
 	<section id="EditPanel" class="popUp">
 		<span>&nbsp; </span>
-		
 			<h2>Editer un lieu</h2>
 			<form method="post" action="index.php?page=edit">
 				<p>				
@@ -102,8 +100,7 @@
 						if($_SESSION['rightsLevel']>0)
 						{
 					?>
-					<td>
-						
+					<td>	
 						<a href="#" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>')" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
 						

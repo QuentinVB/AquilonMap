@@ -4,13 +4,13 @@
 include("./functions/toolbox.php");
 ?>
     <body>
-		<nav id="data" class="toggleableMenu">
-			<span>&nbsp;	</span>
+		<nav class="toggleableMenu">
+			<span>&nbsp;</span>
 			<div>
 				<ul>
-					<li><a href="index.php?page=backoffice"><?php echo $backofficeAcces;?></a></li>
-					<li>Dernière mise à jour : <?php echo $date[0]; ?></li>
+					<li><a href="index.php?page=backoffice"><?php echo $backofficeAcces;?></a></li>	
 				</ul>
+				<p>Dernière mise à jour : <?php echo $date[0]; ?></p>
 				<h2><?php echo $msg;?></h2>	
 				<h3>Legende</h3>
 				<ul>
