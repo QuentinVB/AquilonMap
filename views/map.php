@@ -1,7 +1,7 @@
 <?php
 //view
-
 include("./functions/toolbox.php");
+include("./views/header.php");
 ?>
     <body>
 		<nav class="toggleableMenu">
@@ -82,4 +82,5 @@ include("./functions/toolbox.php");
 	
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête
+include("./views/footer.php");
 ?>
