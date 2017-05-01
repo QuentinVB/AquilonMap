@@ -2,7 +2,7 @@
 //controler
 	if(empty($_SESSION['userName']))
 	{
-		header("Location: http://les-planetes2kentin.fr/AquilonMap/index.php?page=auth");
+		header("Location: ./index.php?page=auth");
 	}
 	else
 	{
