@@ -78,7 +78,14 @@
 					<td>Nom</td>
 					<td>Type</td>
 					<td>Coordonnés</td>
+					<?php
+						if($_SESSION['rightsLevel']>0)
+						{
+					?>
 					<td>Actions</td>
+					<?php
+						}
+					?>
 				</tr>
 			</thead>
 			<tbody>
@@ -91,23 +98,21 @@
 					<td><?php echo $datamarker['name']; ?></td>
 					<td><?php echo $datamarker['classes']; ?></td>
 					<td><em><?php echo $datamarker['x']; ?>:<?php echo $datamarker['y']; ?></em></td>
-					<td>
-						<?php
+					<?php
 						if($_SESSION['rightsLevel']>0)
 						{
-						?>
+					?>
+					<td>
+						
 						<a href="#" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>')" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
-						<?php
-						}
-						if($_SESSION['rightsLevel']>0)
-						{
-						?>
+						
 						<a href="index.php?page=delete&amp;id=<?php echo $datamarker['id']; ?>&amp;x=<?php echo $datamarker['x']; ?>&amp;y=<?php echo $datamarker['y']; ?>" onclick="return confirm('Confirmer suppression ?')"><img src="./assets/img/delete.png"/> effacer</a>
-						<?php
-						}
-						?>
+						
 					</td>
+					<?php
+						}
+					?>
 				</tr>
 				<?php
 				}

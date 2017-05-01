@@ -9,6 +9,17 @@
         $usersMatched = getUserByUserName($_POST['username']);
         while ($user = $usersMatched->fetch())
         {
+            /*
+            echo count($usersMatched);
+            echo "<br/>";
+            echo $_POST['username'];
+            echo "<br/>";
+            echo $user['userName'];
+            echo "<br/>";
+            echo hash("md5",$_POST['password']);
+            echo "<br/>";
+            echo $user['password'];
+            */
              //2 check password hash
             if($_POST['username'] == $user['userName'] && hash("md5",$_POST['password']) == $user['password'])
             {
