@@ -8,9 +8,10 @@ include("./functions/toolbox.php");
 			<span>&nbsp;	</span>
 			<div>
 				<ul>
-					<li><a href="index.php?page=backoffice">Connexion</a></li>
+					<li><a href="index.php?page=backoffice"><?php echo $backofficeAcces;?></a></li>
 					<li>Dernière mise à jour : <?php echo $date[0]; ?></li>
-				</ul>	
+				</ul>
+				<h2><?php echo $msg;?></h2>	
 				<h3>Legende</h3>
 				<ul>
 					<li><img src ="./assets/img/square-18.png"/>Lieu d'intéret</li>

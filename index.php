@@ -21,10 +21,8 @@
         include "./controlers/" . $_GET["page"] . ".php";
     }
     else
-    {
-        echo "EXTERMINATE ?";
-        if (empty($_SESSION['userName'])) {
-            echo "FUCK YEAH EXTERMINATE !";
+    {        
+        if (empty($_SESSION['userName'])) {      
             session_unset();
             session_destroy();
         };

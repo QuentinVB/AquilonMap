@@ -4,7 +4,6 @@
 	$reponse = getLastDate(); 
 	$date = $reponse->fetch();
 	$msg = "";
-
 	if(empty($_SESSION['userName']))
 	{
 		header('Location: ./index.php?page=auth');
@@ -33,11 +32,6 @@
 		}
 	    include("./views/backoffice.php");	
 	}
-
-	
-	
-	
-	
 ?>
 
 
