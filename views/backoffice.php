@@ -1,5 +1,6 @@
 <?php
 //view
+include("./views/header.php");
 ?>
 <body>
 	<nav>
@@ -121,4 +122,5 @@
 </body>
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête
+include("./views/footer.php");
 ?>
