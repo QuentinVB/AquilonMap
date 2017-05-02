@@ -39,7 +39,23 @@
 				$reponse = getMarkersByClasses($classe);
 				while ($datamarker = $reponse->fetch())
 				{
-				?>L.marker(leafConvert([<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>]),{icon: <?php echo $datamarker['classes']; ?>}).bindPopup("<?php echo $datamarker['name'];?><br/><em><?php echo $datamarker['x']; ?>:<?php echo $datamarker['y']; ?></em>"),<?php
+?>L.marker(leafConvert([<?php 
+echo $datamarker['x']; 
+?>,<?php 
+echo $datamarker['y']; 
+?>]),{icon: <?php 
+echo $datamarker['classes']; 
+?>}).bindPopup('<?php 
+echo addslashes($datamarker['name']);
+?><br/><em><?php 
+echo $datamarker['x']; 
+?>:<?php 
+echo $datamarker['y']; 
+?></em><br/><?php
+//Deletemarker HERE 
+deleteButton($datamarker,"map");
+?>'),
+<?php
 				}
 				?>L.marker([0,0],{icon: lieu})]);
 		<?php
