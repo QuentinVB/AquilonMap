@@ -1,6 +1,6 @@
 <?php
 //view
-include("./views/header.php");
+include("./views/include/header.php");
 ?>
 <body>
 	<nav class="toggleableMenu">
@@ -27,5 +27,5 @@ include("./views/header.php");
 	<script src="./assets/js/toggle.js"></script>
 </body>
 <?php
-include("./views/footer.php");
+include("./views/include/footer.php");
 ?>

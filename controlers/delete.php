@@ -1,6 +1,10 @@
 <?php
 //save
 	include("./models/model.php");
+	$redirect = "backoffice";
+
+	if(isset($_GET['redirect']) && $_GET['redirect'] =="map") {$redirect="map"; }
+
 	if($_SESSION['rightsLevel']>0)
 	{
 		$id = strip_tags($_GET['id']);
@@ -9,5 +13,5 @@
 
 		deleteMarker($id,$x,$y);
 	}
-	header('Location: ./index.php?page=backoffice&msg=delete');
+	header('Location: ./index.php?page='.$redirect.'&msg=delete');
 ?>

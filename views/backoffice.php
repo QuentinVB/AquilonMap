@@ -1,6 +1,7 @@
 <?php
 //view
-include("./views/header.php");
+include("./views/include/header.php");
+include("./views/include/button.php");
 ?>
 <body>
 	<nav>
@@ -104,9 +105,7 @@ include("./views/header.php");
 					<td>	
 						<a href="#" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>')" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
-						
-						<a href="index.php?page=delete&amp;id=<?php echo $datamarker['id']; ?>&amp;x=<?php echo $datamarker['x']; ?>&amp;y=<?php echo $datamarker['y']; ?>" onclick="return confirm('Confirmer suppression ?')"><img src="./assets/img/delete.png"/> effacer</a>
-						
+						<?php deleteButton($datamarker,"backoffice");?>
 					</td>
 					<?php
 						}
@@ -122,5 +121,5 @@ include("./views/header.php");
 </body>
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête
-include("./views/footer.php");
+include("./views/include/footer.php");
 ?>
