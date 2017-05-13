@@ -54,6 +54,7 @@ echo $datamarker['y'];
 ?></em><br/><?php
 //Deletemarker HERE 
 deleteButton($datamarker,"map");
+//editButton($datamarker,"map");
 ?>'),
 <?php
 				}

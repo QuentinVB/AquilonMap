@@ -37,7 +37,8 @@ include("./views/include/button.php");
 			</div>
 		</nav>
 		<div id="mapid"></div>
-        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script src="./assets/js/leaflet-1-0-3-min.js"></script>
+        <!--<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
         <script src="./assets/js/leafletManagment.js"></script>
 		
 		<script>
