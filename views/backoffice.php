@@ -63,6 +63,9 @@ include("./views/include/button.php");
 					<option value="route">route</option>
 					<option value="emplacement">emplacement</option>
 				</select><br/>
+				<p>Visibilité : <br />
+				<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="false" /> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="true" />
+				</p>
 				<input type="submit" value="sauvegarder" />
 			</p>	
 		</form>
