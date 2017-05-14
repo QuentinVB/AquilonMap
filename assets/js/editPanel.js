@@ -18,10 +18,11 @@ function showEdit(id,name,x,y,classes)
             break;
         }
      }
-     console.log(id,name,x,y,classes);
+     //console.log(id,name,x,y,classes);
 }
 
-trigger.addEventListener("click", function (e) {             
+trigger.addEventListener("click", function (e) {       
+    //TODO : purge formulaire      
         editPanel.style.display="none";
     }
 );

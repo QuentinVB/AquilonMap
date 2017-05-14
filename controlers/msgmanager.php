@@ -21,6 +21,6 @@
             default:
                 $msg = "yup !";
                 break;
-        }	
+        }
     }
 ?>

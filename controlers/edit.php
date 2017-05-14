@@ -1,5 +1,6 @@
 <?php
 	include("./models/model.php");
+
 	if($_SESSION['rightsLevel']>0)
 	{
 		$id = strip_tags($_POST['id']);
@@ -9,5 +10,6 @@
 		$classes = strip_tags( $_POST['classes']);
 		editMarker($id,$name,$x,$y,$classes);
 	}
-	header("Location: ./index.php?page=backoffice&msg=edit");
+	$msg="edit";
+	include("./controlers/redirect.php");
 ?>
