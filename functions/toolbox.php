@@ -44,8 +44,7 @@ function printMarker($classe)
 			}
 			else if(($datamarker['isPrivate']==TRUE) && !empty($_SESSION['userName']))
 			{
-				//echo "private found !";
-				if($_SESSION['rightsLevel']>0)
+				if($_SESSION['rightsLevel']>=0)
 				{
 					writeMarker($datamarker);
 				}

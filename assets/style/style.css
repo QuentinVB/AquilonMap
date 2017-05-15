@@ -100,7 +100,7 @@ form
 {
 	margin:auto;	
 }
-tr td:nth-child(4)
+tr td:nth-child(5)
 {
 	min-width:150px;
 }
@@ -112,6 +112,14 @@ td
 {
 	border:1px solid black;
 	padding:2px;
+}
+.privacy_0
+{
+	background-color:lime;
+}
+.privacy_1
+{
+	background-color:red;
 }
 .toggleableMenu span
 {
