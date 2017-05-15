@@ -35,7 +35,11 @@ include("./views/include/button.php");
 						<option value="route">route</option>
 						<option value="emplacement">emplacement</option>
 					</select><br/>
+					<p>Visibilité : <br />
+						<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
+					</p>
 					<input type="hidden" id="idEdit" name="id" value=""/>
+					
 					<input type="submit" value="sauvegarder" />
 				</p>	
 			</form>		
@@ -64,7 +68,7 @@ include("./views/include/button.php");
 					<option value="emplacement">emplacement</option>
 				</select><br/>
 				<p>Visibilité : <br />
-				<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="false" /> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="true" />
+					<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
 				</p>
 				<input type="submit" value="sauvegarder" />
 			</p>	
@@ -121,7 +125,7 @@ include("./views/include/button.php");
 						{
 					?>
 					<td>	
-						<a href="#" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>')" ><img src="./assets/img/pencil.png"/>modifier</a>
+						<a href="#EditPanel" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>',<?php echo $datamarker['isPrivate']; ?>)" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
 						<?php deleteButton($datamarker,"backoffice");?>
 					</td>
