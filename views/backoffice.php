@@ -1,6 +1,7 @@
 <?php
 //view
-include("./views/header.php");
+include("./views/include/header.php");
+include("./views/include/button.php");
 ?>
 <body>
 	<nav>
@@ -34,7 +35,11 @@ include("./views/header.php");
 						<option value="route">route</option>
 						<option value="emplacement">emplacement</option>
 					</select><br/>
+					<p>Visibilité : <br />
+						<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
+					</p>
 					<input type="hidden" id="idEdit" name="id" value=""/>
+					
 					<input type="submit" value="sauvegarder" />
 				</p>	
 			</form>		
@@ -62,6 +67,9 @@ include("./views/header.php");
 					<option value="route">route</option>
 					<option value="emplacement">emplacement</option>
 				</select><br/>
+				<p>Visibilité : <br />
+					<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
+				</p>
 				<input type="submit" value="sauvegarder" />
 			</p>	
 		</form>
@@ -77,6 +85,7 @@ include("./views/header.php");
 					<td>Nom</td>
 					<td>Type</td>
 					<td>Coordonnés</td>
+					<td>Visibilité</td>
 					<?php
 						if($_SESSION['rightsLevel']>0)
 						{
@@ -97,16 +106,28 @@ include("./views/header.php");
 					<td><?php echo $datamarker['name']; ?></td>
 					<td><?php echo $datamarker['classes']; ?></td>
 					<td><em><?php echo $datamarker['x']; ?>:<?php echo $datamarker['y']; ?></em></td>
+					<td class="privacy_<?php echo $datamarker['isPrivate']?>"><?php 
+					switch($datamarker['isPrivate'])
+					{
+						case 0:
+							echo "Public";
+						break;
+						case 1:
+							echo "Privé";
+						break;
+						default;
+							echo "Public";	
+						break;
+					}
+					; ?></td>
 					<?php
 						if($_SESSION['rightsLevel']>0)
 						{
 					?>
 					<td>	
-						<a href="#" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>')" ><img src="./assets/img/pencil.png"/>modifier</a>
+						<a href="#EditPanel" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>',<?php echo $datamarker['isPrivate']; ?>)" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
-						
-						<a href="index.php?page=delete&amp;id=<?php echo $datamarker['id']; ?>&amp;x=<?php echo $datamarker['x']; ?>&amp;y=<?php echo $datamarker['y']; ?>" onclick="return confirm('Confirmer suppression ?')"><img src="./assets/img/delete.png"/> effacer</a>
-						
+						<?php deleteButton($datamarker,"backoffice");?>
 					</td>
 					<?php
 						}
@@ -122,5 +143,5 @@ include("./views/header.php");
 </body>
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête
-include("./views/footer.php");
+include("./views/include/footer.php");
 ?>

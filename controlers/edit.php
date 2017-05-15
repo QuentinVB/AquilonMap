@@ -1,5 +1,6 @@
 <?php
 	include("./models/model.php");
+
 	if($_SESSION['rightsLevel']>0)
 	{
 		$id = strip_tags($_POST['id']);
@@ -7,7 +8,10 @@
 		$x = strip_tags($_POST['x']);
 		$y = strip_tags( $_POST['y']);
 		$classes = strip_tags( $_POST['classes']);
-		editMarker($id,$name,$x,$y,$classes);
+		$isPrivate = strip_tags( $_POST['isPrivate']);
+		
+		editMarker($id,$name,$x,$y,$classes,$isPrivate);
 	}
-	header("Location: ./index.php?page=backoffice&msg=edit");
+	$msg="edit";
+	include("./controlers/redirect.php");
 ?>
