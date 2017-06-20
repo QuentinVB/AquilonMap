@@ -49,7 +49,6 @@ include("./views/include/button.php");
 			var mult = 0.74;
 			var north = L.imageOverlay('./assets/img/north.jpg', mapBounds(5000*mult,3353*mult,[356,-713])).setOpacity(1.0).addTo(map);			
 			var south = L.imageOverlay('./assets/img/south.jpg', mapBounds(5000*mult,5833*mult,[-3960,-713])).setOpacity(1.0).addTo(map);
-			var extnorth = L.imageOverlay('./assets/img/ex-north.jpg', mapBounds(5000*mult,3358*mult,[1670,-713])).setOpacity(1.0).addTo(map);						
 			map.fitBounds(mapBounds(5000*mult,5833*mult,[-3970,-700]));
 
 			<?php
