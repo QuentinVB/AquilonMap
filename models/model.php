@@ -23,27 +23,29 @@
 		
 		return $reponse;
 	}	
-	function addMarker($name, $x,$y,$classes)
+	function addMarker($name, $x,$y,$classes,$isPrivate)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("INSERT INTO `cartedata` (`id`, `name`, `x`, `y`, `classes`, `date_ajout`) VALUES (NULL, :name, :x, :y, :classes, NOW())");	
+		$req = $bdd->prepare("INSERT INTO `cartedata` (`id`, `name`, `x`, `y`, `classes`, `date_ajout`, `isPrivate`) VALUES (NULL, :name, :x, :y, :classes, NOW(), :isPrivate)");	
 		$req -> execute(array(
 		'name' => $name,
 		'x' => $x,
 		'y' => $y,
-		'classes' => $classes
+		'classes' => $classes,
+		'isPrivate' => $isPrivate
 		));
 	}
 	function editMarker($id, $name, $x,$y,$classes)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("UPDATE `cartedata` SET `name` = :name, `x` = :x, `y` = :y, `classes` = :classes, `date_ajout` = NOW() WHERE `cartedata`.`id` = :id; ");	
+		$req = $bdd->prepare("UPDATE `cartedata` SET `name` = :name, `x` = :x, `y` = :y, `classes` = :classes, `date_ajout` = NOW(), `isPrivate` = :isPrivate WHERE `cartedata`.`id` = :id; ");	
 		$req -> execute(array(
 		'id' => $id,
 		'name' => $name,
 		'x' => $x,
 		'y' => $y,
-		'classes' => $classes
+		'classes' => $classes,
+		'isPrivate' => $isPrivate
 		));
 	}
 	function deleteMarker($id, $x,$y)

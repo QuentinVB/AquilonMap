@@ -1,7 +1,5 @@
-
 <?php
 session_start();
-
 if (!empty($_POST['page']) && is_file('./controlers/' . $_POST['page'] . '.php')) 
 {
     include "./controlers/" . $_POST["page"] . ".php";
@@ -12,7 +10,8 @@ else if (!empty($_GET['page']) && is_file('./controlers/' . $_GET['page'] . '.ph
 }
 else
 {        
-    if (empty($_SESSION['userName'])) {      
+    if (empty($_SESSION['userName']))
+    {
         session_unset();
         session_destroy();
     };
