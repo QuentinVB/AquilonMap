@@ -35,7 +35,7 @@
 		'isPrivate' => $isPrivate
 		));
 	}
-	function editMarker($id, $name, $x,$y,$classes)
+	function editMarker($id, $name, $x,$y,$classes,$isPrivate)
 	{
 		$bdd = connexion_database();
 		$req = $bdd->prepare("UPDATE `cartedata` SET `name` = :name, `x` = :x, `y` = :y, `classes` = :classes, `date_ajout` = NOW(), `isPrivate` = :isPrivate WHERE `cartedata`.`id` = :id; ");	
