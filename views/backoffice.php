@@ -23,8 +23,8 @@ include("./views/include/button.php");
 			<form method="post" action="index.php?page=edit">
 				<p>				
 					<label for="name">Nom du lieu</label> : <input type="text" name="name" id="nameEdit" value="" required/><br/>
-					<label for="x">Coordonné X </label> : <input type="text" name="x" id="xEdit" size="9" placeholder="east/west" required/><br/>
-					<label for="y">Coordonné Y </label> : <input type="text" name="y" id="yEdit" size="9" placeholder="north/south" required/><br/>
+					<label for="x">Coordonnée X </label> : <input type="text" name="x" id="xEdit" size="9" placeholder="east/west" required/><br/>
+					<label for="y">Coordonnée Y </label> : <input type="text" name="y" id="yEdit" size="9" placeholder="north/south" required/><br/>
 					<label for="classes">Classe de lieu</label>
 					<select name="classes" id="classesEdit">
 						<option value="lieu">lieu</option>
@@ -55,8 +55,8 @@ include("./views/include/button.php");
 		<form method="post" action="index.php?page=add">
 			<p>
 				<label for="name">Nom du lieu</label> : <input type="text" name="name" id="name" required/><br/>
-				<label for="x">Coordonné X </label> : <input type="text" name="x" id="x" size="9" placeholder="east/west" required/><br/>
-				<label for="y">Coordonné Y </label> : <input type="text" name="y" id="y" size="9" placeholder="north/south" required/><br/>
+				<label for="x">Coordonnée X </label> : <input type="text" name="x" id="x" size="9" placeholder="east/west" required/><br/>
+				<label for="y">Coordonnée Y </label> : <input type="text" name="y" id="y" size="9" placeholder="north/south" required/><br/>
 				<label for="classes">Classe de lieu</label>
 				<select name="classes" id="classes">
 					<option value="lieu" selected>lieu</option>
@@ -84,7 +84,7 @@ include("./views/include/button.php");
 				<tr>
 					<td>Nom</td>
 					<td>Type</td>
-					<td>Coordonnés</td>
+					<td>Coordonnées</td>
 					<td>Visibilité</td>
 					<?php
 						if($_SESSION['rightsLevel']>0)
