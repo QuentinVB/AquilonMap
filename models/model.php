@@ -58,4 +58,10 @@
 		'y' => $y
 		));
 	}
+	function getAreas()
+	{
+		$bdd = connexion_database();
+		$reponse = $bdd->query('SELECT `id`,`name`,`colorHexa`,AsText(`polygon`) as polygonwkt,`isPrivate`  FROM `cartearea` ');
+		return $reponse;
+	}
 ?>

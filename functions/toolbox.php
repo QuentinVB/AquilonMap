@@ -75,4 +75,52 @@ deleteButton($datamarker,"map");
 ?>'),
 <?php
 }
+function printArea()
+{
+	?>
+	var areaX = L.layerGroup([
+	<?php
+	$sqlresponse = getAreas();
+	$number = count($sqlresponse);
+	$i = 1;
+
+	while ($dataArea = $sqlresponse->fetch())
+	{
+		/*if($dataArea['isPrivate']==FALSE)
+		{
+			writeArea($dataArea);
+		}
+		else if(($dataArea['isPrivate']==TRUE) && !empty($_SESSION['userName']))
+		{
+			if($_SESSION['rightsLevel']>=0)
+			{
+				writeArea($dataArea);
+			}
+		}*/
+		writeArea($dataArea);
+		if ($i < $number)
+		{
+			echo ',';
+		}
+		$i ++;
+	}
+	?>
+	]);
+	<?php
+}
+function writeArea($dataarea)
+{
+?>	
+L.polygon
+(
+	<?php echo wkt_to_json($dataarea['polygonwkt']) ;?>
+	,
+{
+	color: '#<?php echo $dataarea['colorHexa'];?>',
+	fillColor: '#<?php echo $dataarea['colorHexa'];?>',
+	fillOpacity: 0.08
+}
+).bindPopup('<?php echo $dataarea['name']; ?>')
+<?php
+}
 ?>

@@ -1,5 +1,6 @@
 <?php
 //view
+
 include("./functions/toolbox.php");
 include("./views/include/header.php");
 include("./views/include/button.php");
@@ -34,6 +35,21 @@ include("./views/include/button.php");
 					http://tiny.cc/20rcky
 				</p>
 				<p>Aquilon, cartographie par Hamil Sambre <br/>aka KaentinWede, dessin par Asaric - 2017</p>
+				<p><?php
+				$sqlresponse = getAreas();
+				while ($dataArea = $sqlresponse->fetch())
+				{
+					echo $dataArea['id'];
+					echo $dataArea['name'];
+					echo $dataArea['colorHexa'];
+					echo wkt_to_json($dataArea['polygonwkt']);
+					//echo join(',', array_keys($dataArea));
+					//echo join(',', $dataArea);
+				}
+				//printArea();
+				
+				
+			?></p>
 			</div>
 		</nav>
 		<div id="mapid"></div>
@@ -53,10 +69,11 @@ include("./views/include/button.php");
 			map.fitBounds(mapBounds(5000*mult,5833*mult,[-3970,-700]));
 
 			<?php
-			$classes =["lieu","ruines","limite","biome","emplacement","fleuve","route"];
+			$classes =["lieu","ruines","limite","biome","emplacement","fleuve","route","area"];
 			foreach ($classes as $value){
 				printMarker($value);
 			}
+			printArea();
 			?>
 			var overlays = {
 				"Lieux": lieuX,
@@ -65,17 +82,20 @@ include("./views/include/button.php");
 				"Nature": biomeX,
 				"Emplacements":emplacementX,
 				"Fleuves":fleuveX,
-				"Route":routeX
+				"Route":routeX,
+				"Zone":areaX
 			};
 			L.control.layers(null,overlays).addTo(map);			
 			<?php
-			foreach ($classes  as $value){
+			foreach ($classes as $value){
 				echo $value."X.addTo(map);";
 			}
 			?>
 			emplacementX.addTo(map);
 			var pointer = L.marker([0,0],{icon: pointer}).addTo(map);
- 
+
+			
+
 			//L.control.map.setView([0, 0], -1);
 					
 		</script>
