@@ -64,4 +64,15 @@
 		$reponse = $bdd->query('SELECT `id`,`name`,`colorHexa`,AsText(`polygon`) as polygonwkt,`isPrivate`  FROM `cartearea` ');
 		return $reponse;
 	}
+	function addArea($name, $colorHexa,$polygon,$isPrivate)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("");	
+		$req -> execute(array(
+		'name' => $name,
+		'colorHexa' => $colorHexa,
+		'polygon' => $polygon,
+		'isPrivate' => $isPrivate
+		));
+	}
 ?>

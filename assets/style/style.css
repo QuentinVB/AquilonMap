@@ -157,3 +157,9 @@ h1
 	width:50%;
 	text-align:center;
 }
+.colorPick
+{
+	height:8px;
+	width:8px;
+	border : white 1 solid;
+}

@@ -52,7 +52,7 @@ include("./views/include/button.php");
 		?>
 	<section>
 		<h2>Ajouter un lieu</h2>
-		<form method="post" action="index.php?page=add">
+		<form method="post" action="index.php?page=addMarker">
 			<p>
 				<label for="name">Nom du lieu</label> : <input type="text" name="name" id="name" required/><br/>
 				<label for="x">Coordonnée X </label> : <input type="text" name="x" id="x" size="9" placeholder="east/west" required/><br/>
@@ -67,6 +67,20 @@ include("./views/include/button.php");
 					<option value="route">route</option>
 					<option value="emplacement">emplacement</option>
 				</select><br/>
+				<p>Visibilité : <br />
+					<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
+				</p>
+				<input type="submit" value="sauvegarder" />
+			</p>	
+		</form>
+	</section>
+	<section>
+		<h2>Ajouter une zone</h2>
+		<form method="post" action="index.php?page=addArea">
+			<p>
+				<label for="name">Nom de la zone</label> : <input type="text" name="name" id="name" required/><br/>
+				<label for="polygon">Coordonnées</label> <textarea rows="10" cols="200" name="polygon" id="polygon" placeholder="coordonnés de la zone sous la forme ' 0 1,1 1,0 1' "></textarea>
+				<label for="colorHexa">Couleur de la zone </label> : <input type="color" name="colorHexa" id="colorHexa" required/><br/>
 				<p>Visibilité : <br />
 					<label for="public">Public</label> : <input type="radio" name="isPrivate" id="public" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="private" value="1" />
 				</p>
@@ -139,7 +153,66 @@ include("./views/include/button.php");
 			</tbody>
 		</table>
 	</section>
-	
+	<section>
+		<h2>Liste des Zone</h2>
+		<table>
+			<thead>
+				<tr>
+					<td>Nom</td>
+					<td>Couleur</td>
+					<td>Coordonnées</td>
+					<td>Visibilité</td>
+					<?php
+						if($_SESSION['rightsLevel']>0)
+						{
+					?>
+					<td>Actions</td>
+					<?php
+						}
+					?>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				$reponse = getAreas();
+				while ($datamarker = $reponse->fetch())
+				{
+				?>
+				<tr>
+					<td><?php echo $datamarker['name']; ?></td>
+					<td><span class="colorPick" style="background-color:<?php echo $datamarker['colorHexa']; ?>;"></span><?php echo $datamarker['colorHexa']; ?></td>
+					<td><em><?php echo $datamarker['polygonwkt']; ?></em></td>
+					<td class="privacy_<?php echo $datamarker['isPrivate']?>"><?php 
+					switch($datamarker['isPrivate'])
+					{
+						case 0:
+							echo "Public";
+						break;
+						case 1:
+							echo "Privé";
+						break;
+						default;
+							echo "Public";	
+						break;
+					}
+					; ?></td>
+					<?php
+						if($_SESSION['rightsLevel']>0)
+						{
+					?>
+					<td>	
+						<?php //deleteButton($datamarker,"backoffice");?>
+					</td>
+					<?php
+						}
+					?>
+				</tr>
+				<?php
+				}
+				?>
+			</tbody>
+		</table>
+	</section>
 </body>
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête
