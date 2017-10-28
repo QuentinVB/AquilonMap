@@ -4,9 +4,10 @@
 	if($_SESSION['rightsLevel']>=0)
 	{
 		$name = strip_tags($_POST['name']);
-		if (preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", $strip_tags($_POST['colorHexa'])) == 1)
+		$reg = preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", strip_tags($_POST['colorHexa']));
+		if($reg == 1)
 		{
-			$colorHexa = $strip_tags($_POST['colorHexa'])) ;	
+			$colorHexa = strip_tags($_POST['colorHexa']) ;	
 		}
 		else
 		{

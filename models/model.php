@@ -65,9 +65,10 @@
 		return $reponse;
 	}
 	function addArea($name, $colorHexa,$polygon,$isPrivate)
-	{
+	{		
+		$polygon = "POLYGON((".$polygon."))";
 		$bdd = connexion_database();
-		$req = $bdd->prepare("");	
+		$req = $bdd->prepare("INSERT INTO `cartearea` (`id`, `name`, `colorHexa`, `polygon`, `isPrivate`) VALUES (NULL, :name, :colorHexa, ST_GeomFromText(:polygon), :isPrivate)");	
 		$req -> execute(array(
 		'name' => $name,
 		'colorHexa' => $colorHexa,

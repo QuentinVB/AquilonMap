@@ -39,7 +39,7 @@ nav
 }
 section
 {
-	width:50%;
+	max-width:50%;
 	margin:auto;
 	background-color:lightgrey;
 	position:relative;
@@ -159,7 +159,14 @@ h1
 }
 .colorPick
 {
+	display:inline-block;
 	height:8px;
 	width:8px;
 	border : white 1 solid;
+}
+#backofficeTools
+{
+	display: flex;
+	margin:10%;
+	justify-content:space-around;
 }

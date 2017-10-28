@@ -98,7 +98,7 @@ function printArea()
 			}
 		}*/
 		writeArea($dataArea);
-		if ($i < $number)
+		if ($i <= $number)
 		{
 			echo ',';
 		}
@@ -116,8 +116,8 @@ L.polygon
 	<?php echo wkt_to_json($dataarea['polygonwkt']) ;?>
 	,
 {
-	color: '#<?php echo $dataarea['colorHexa'];?>',
-	fillColor: '#<?php echo $dataarea['colorHexa'];?>',
+	color: '<?php echo $dataarea['colorHexa'];?>',
+	fillColor: '<?php echo $dataarea['colorHexa'];?>',
 	fillOpacity: 0.08
 }
 ).bindPopup('<?php echo $dataarea['name']; ?>')

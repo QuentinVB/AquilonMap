@@ -36,6 +36,7 @@ include("./views/include/button.php");
 				</p>
 				<p>Aquilon, cartographie par Hamil Sambre <br/>aka KaentinWede, dessin par Asaric - 2017</p>
 				<p><?php
+				/*
 				$sqlresponse = getAreas();
 				while ($dataArea = $sqlresponse->fetch())
 				{
@@ -46,6 +47,7 @@ include("./views/include/button.php");
 					//echo join(',', array_keys($dataArea));
 					//echo join(',', $dataArea);
 				}
+				*/
 				//printArea();
 				
 				
