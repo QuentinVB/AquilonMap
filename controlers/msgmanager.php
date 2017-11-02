@@ -18,6 +18,9 @@
             case 'disconnected':
                 $msg = "Déconnexion réussie !";
                 break;
+            case 'error':
+                $msg = "Something wrong happened !";
+                break;    
             default:
                 $msg = "yup !";
                 break;

@@ -2,8 +2,9 @@
 	include("./functions/database_connexion.php");
 	include("./models/modelArea.php");
 
-	if($_SESSION['rightsLevel']>=0)
+	if($_SESSION['rightsLevel']>0)
 	{
+		$id = strip_tags($_POST['id']);
 		$name = strip_tags($_POST['name']);
 		$reg = preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", strip_tags($_POST['colorHexa']));
 		if($reg == 1)
@@ -16,8 +17,9 @@
 		}
 		$polygon = strip_tags( $_POST['polygon']); //add regex for polygon
 		$isPrivate = strip_tags( $_POST['isPrivate']);
-
-		addArea($name, $colorHexa,$polygon,$isPrivate);
+		
+		editArea($id,$name, $colorHexa,$polygon,$isPrivate);
 	}
-	header("Location: ./index.php?page=backoffice&msg=add");
+	$msg="edit";
+	include("./controlers/redirect.php");
 ?>

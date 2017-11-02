@@ -1,6 +1,7 @@
 <?php
 //save
-	include("./models/model.php");
+	include("./functions/database_connexion.php");
+	include("./models/modelMarker.php");
 
 	if($_SESSION['rightsLevel']>0)
 	{

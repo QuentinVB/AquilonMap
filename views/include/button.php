@@ -1,6 +1,6 @@
 <?php 
 
-function deleteButton($datamarker,$pageToRedirect)
+function deleteMarkerButton($datamarker,$pageToRedirect)
 {
     if(!empty($_SESSION['userName']) && ($_SESSION['rightsLevel']>0))
     {
@@ -17,7 +17,7 @@ function deleteButton($datamarker,$pageToRedirect)
                 $onclick="";
                 break;
         }
-        ?><a href="index.php?page=delete&amp;redirect=<?php 
+        ?><a href="index.php?page=deleteMarker&amp;redirect=<?php 
         echo $pageToRedirect ;
         ?>&amp;id=<?php 
         echo $datamarker['id']; 

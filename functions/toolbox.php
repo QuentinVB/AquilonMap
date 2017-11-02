@@ -70,7 +70,7 @@ echo $datamarker['x'];
 echo $datamarker['y']; 
 ?></em><br/><?php
 //Deletemarker HERE 
-deleteButton($datamarker,"map");
+deleteMarkerButton($datamarker,"map");
 //editButton($datamarker,"map");
 ?>'),
 <?php

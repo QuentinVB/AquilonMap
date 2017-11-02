@@ -19,3 +19,28 @@ document.getElementById("yPosition").addEventListener("input", function (e) {
         setPosition(xSend,ySend);
     }
 );
+
+map.on("contextmenu", function (event) {
+    console.log("user right-clicked on map coordinates: " + event.latlng.toString());
+    lat = ev.latlng.lat;
+    lng = ev.latlng.lng;
+  });
+
+/*
+var lat, lng;
+
+map.addEventListener('mousemove', function(ev) {
+   lat = ev.latlng.lat;
+   lng = ev.latlng.lng;
+});
+
+document.getElementById("transitmap").addEventListener("contextmenu", function (event) {
+    // Prevent the browser's context menu from appearing
+    event.preventDefault();
+
+    // Add marker
+    // L.marker([lat, lng], ....).addTo(map);
+    alert(lat + ' - ' + lng);
+
+    return false; // To disable default popup.
+});*/

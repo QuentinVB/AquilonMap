@@ -32,25 +32,10 @@ include("./views/include/button.php");
 				</p>
 				<p>
 					<img src ="./assets/img/boussole.png"/><br/>
-					http://tiny.cc/20rcky
+					ShortUrl : http://tiny.cc/20rcky
 				</p>
 				<p>Aquilon, cartographie par Hamil Sambre <br/>aka KaentinWede, dessin par Asaric - 2017</p>
 				<p><?php
-				/*
-				$sqlresponse = getAreas();
-				while ($dataArea = $sqlresponse->fetch())
-				{
-					echo $dataArea['id'];
-					echo $dataArea['name'];
-					echo $dataArea['colorHexa'];
-					echo wkt_to_json($dataArea['polygonwkt']);
-					//echo join(',', array_keys($dataArea));
-					//echo join(',', $dataArea);
-				}
-				*/
-				//printArea();
-				
-				
 			?></p>
 			</div>
 		</nav>

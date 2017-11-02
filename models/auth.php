@@ -1,6 +1,5 @@
 <?php
 //model
-	include("./functions/database_connexion.php");
 	function getUserById($id)
 	{
 		$bdd = connexion_database();

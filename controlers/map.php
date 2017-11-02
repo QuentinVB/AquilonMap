@@ -1,6 +1,8 @@
 <?php
 //controler
-	include("./models/model.php");
+	include("./functions/database_connexion.php");
+	include("./models/modelMarker.php");
+	include("./models/modelArea.php");
 	$reponse = getLastDate(); 
 	$date = $reponse->fetch();
 

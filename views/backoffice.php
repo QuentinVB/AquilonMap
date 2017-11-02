@@ -21,7 +21,7 @@ include("./views/include/button.php");
 	<section id="EditPanel" class="popUp">
 		<span>&nbsp; </span>
 			<h2>Editer un lieu</h2>
-			<form method="post" action="index.php?page=edit">
+			<form method="post" action="index.php?page=editMarker">
 				<p>				
 					<label for="name">Nom du lieu</label> : <input type="text" name="name" id="nameEdit" value="" required/><br/>
 					<label for="x">Coordonnée X </label> : <input type="text" name="x" id="xEdit" size="9" placeholder="east/west" required/><br/>
@@ -51,7 +51,7 @@ include("./views/include/button.php");
 		if($_SESSION['rightsLevel']>=0)
 		{
 		?>
-	<section>
+	<section id="AddMarkerPanel" >
 		<h2>Ajouter un lieu</h2>
 		<form method="post" action="index.php?page=addMarker">
 			<p>
