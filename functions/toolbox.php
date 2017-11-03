@@ -120,7 +120,13 @@ L.polygon
 	fillColor: '<?php echo $dataarea['colorHexa'];?>',
 	fillOpacity: 0.08
 }
-).bindPopup('<?php echo $dataarea['name']; ?>')
+).bindPopup('<?php 
+echo addslashes($dataarea['name']);
+?><br/><?php
+//DeleteArea
+deleteAreaButton($dataarea,"map");
+//editButton($datamarker,"map");
+?>')
 <?php
 }
 ?>

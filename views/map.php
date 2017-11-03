@@ -28,7 +28,8 @@ include("./views/include/button.php");
 				<p>
 					Entrez vos coordonnés pour vous localiser sur la carte.<br/>
 					<label>X</label> : <input type="number" name="xPosition" id="xPosition" placeholder="0" value="0"/><br/>
-					<label>Z</label> : <input type="number" name="yPosition" id="yPosition" placeholder="0" value="0"/>	
+					<label>Z</label> : <input type="number" name="yPosition" id="yPosition" placeholder="0" value="0"/><br />
+					<strong>Vous pouvez aussi faire un click droit sur un endroit de la carte pour poser le pointeur.</strong>	
 				</p>
 				<p>
 					<img src ="./assets/img/boussole.png"/><br/>
@@ -80,9 +81,6 @@ include("./views/include/button.php");
 			?>
 			emplacementX.addTo(map);
 			var pointer = L.marker([0,0],{icon: pointer}).addTo(map);
-
-			
-
 			//L.control.map.setView([0, 0], -1);
 					
 		</script>

@@ -30,6 +30,34 @@ function deleteMarkerButton($datamarker,$pageToRedirect)
         ?>"><img src="./assets/img/delete.png"/> effacer</a><?php
     }
 }
+function deleteAreaButton($dataArea,$pageToRedirect)
+{
+    if(!empty($_SESSION['userName']) && ($_SESSION['rightsLevel']>0))
+    {
+        $onclick="";
+        switch ($pageToRedirect) 
+        {
+            case 'map':
+               $onclick="return confirm(\'Confirmer suppression ?\')";
+                break;
+            case 'backoffice':
+               $onclick="return confirm('Confirmer suppression ?')";
+                break;
+            default:
+                $onclick="";
+                break;
+        }
+        ?><a href="index.php?page=deleteArea&amp;redirect=<?php 
+        echo $pageToRedirect ;
+        ?>&amp;id=<?php 
+        echo $dataArea['id']; 
+        ?>" onclick="<?php
+        echo $onclick;
+        ?>"><img src="./assets/img/delete.png"/> effacer</a><?php
+    }
+}
+
+
 function editButton($datamarker,$pageToRedirect)
 {
    if(!empty($_SESSION['userName']) && ($_SESSION['rightsLevel']>0))

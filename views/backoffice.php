@@ -75,6 +75,11 @@ include("./views/include/button.php");
 			</p>	
 		</form>
 	</section>
+	<?php
+		}
+		if($_SESSION['rightsLevel']>0)
+		{
+		?>
 	<section>
 		<h2>Ajouter une zone</h2>
 		<form method="post" action="index.php?page=addArea">
@@ -177,15 +182,15 @@ include("./views/include/button.php");
 			<tbody>
 				<?php
 				$reponse = getAreas();
-				while ($datamarker = $reponse->fetch())
+				while ($dataArea = $reponse->fetch())
 				{
 				?>
 				<tr>
-					<td><?php echo $datamarker['name']; ?></td>
-					<td><span class="colorPick" style="background-color:<?php echo $datamarker['colorHexa']; ?>;">&nbsp;</span><?php echo $datamarker['colorHexa']; ?></td>
-					<td><em><?php echo $datamarker['polygonwkt']; ?></em></td>
-					<td class="privacy_<?php echo $datamarker['isPrivate']?>"><?php 
-					switch($datamarker['isPrivate'])
+					<td><?php echo $dataArea['name']; ?></td>
+					<td><span class="colorPick" style="background-color:<?php echo $dataArea['colorHexa']; ?>;">&nbsp;</span><?php echo $dataArea['colorHexa']; ?></td>
+					<td><em><?php echo $dataArea['polygonwkt']; ?></em></td>
+					<td class="privacy_<?php echo $dataArea['isPrivate']?>"><?php 
+					switch($dataArea['isPrivate'])
 					{
 						case 0:
 							echo "Public";
@@ -203,7 +208,7 @@ include("./views/include/button.php");
 						{
 					?>
 					<td>	
-						<?php //deleteButton($datamarker,"backoffice");?>
+						<?php deleteAreaButton($dataArea,"backoffice");?>
 					</td>
 					<?php
 						}

@@ -21,26 +21,11 @@ document.getElementById("yPosition").addEventListener("input", function (e) {
 );
 
 map.on("contextmenu", function (event) {
-    console.log("user right-clicked on map coordinates: " + event.latlng.toString());
-    lat = ev.latlng.lat;
-    lng = ev.latlng.lng;
+    //console.log("user right-clicked on map coordinates: " + event.latlng.toString());
+    xSend = Math.ceil(event.latlng.lng+3);
+    ySend = Math.ceil(-event.latlng.lat+3);
+    document.getElementById("xPosition").value = xSend;
+    document.getElementById("yPosition").value = ySend;
+    setPosition(xSend,ySend);
+    
   });
-
-/*
-var lat, lng;
-
-map.addEventListener('mousemove', function(ev) {
-   lat = ev.latlng.lat;
-   lng = ev.latlng.lng;
-});
-
-document.getElementById("transitmap").addEventListener("contextmenu", function (event) {
-    // Prevent the browser's context menu from appearing
-    event.preventDefault();
-
-    // Add marker
-    // L.marker([lat, lng], ....).addTo(map);
-    alert(lat + ' - ' + lng);
-
-    return false; // To disable default popup.
-});*/

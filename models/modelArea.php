@@ -31,13 +31,12 @@
 		'isPrivate' => $isPrivate
 		));
 	}
-	function deleteArea($id,$name)
+	function deleteArea($id)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("DELETE FROM `cartearea` WHERE `cartearea`.`id` = :id AND `cartearea`.`name` = :name");	
+		$req = $bdd->prepare("DELETE FROM `cartearea` WHERE `cartearea`.`id` = :id");	
 		$req -> execute(array(
-		'id' => $id,
-		'name' => $name
+		'id' => $id
 		));
 	}
 ?>
