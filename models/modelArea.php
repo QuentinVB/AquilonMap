@@ -22,7 +22,7 @@
 	{
 		$polygon = "POLYGON((".$polygon."))";
 		$bdd = connexion_database();
-		$req = $bdd->prepare("UPDATE `cartearea` SET `name` = :name, `colorHexa` = :colorHexa, `y` = :y, `polygon` = :classes, `isPrivate` = ST_GeomFromText(:polygon) WHERE `cartedata`.`id` = :id; ");	
+		$req = $bdd->prepare("UPDATE `cartearea` SET `name` = :name, `colorHexa` = :colorHexa, `polygon` = ST_GeomFromText(:polygon), `isPrivate` = :isPrivate  WHERE `cartearea`.`id` = :id; ");	
 		$req -> execute(array(
 		'id' => $id,
 		'name' => $name,

@@ -1,9 +1,9 @@
-var editPanel = document.getElementById("EditPanel");
-var trigger = editPanel.getElementsByTagName("span")[0];
+var editMarkerPanel = document.getElementById("EditMarkerPanel");
+var trigger = editMarkerPanel.getElementsByTagName("span")[0];
 
-function showEdit(id,name,x,y,classes,isPrivate)
+function showEditMarkerPanel(id,name,x,y,classes,isPrivate)
 {
-     editPanel.style.display="block";
+    editMarkerPanel.style.display="block";
      document.getElementById("idEdit").value = id;
      document.getElementById("nameEdit").value = name;
      document.getElementById("xEdit").value = x;
@@ -35,7 +35,37 @@ function showEdit(id,name,x,y,classes,isPrivate)
 
 trigger.addEventListener("click", function (e) {       
     //TODO : purge formulaire      
-        editPanel.style.display="none";
+    editMarkerPanel.style.display="none";
+    }
+);
+
+
+var editAreaPanel = document.getElementById("EditAreaPanel");
+var trigger2 = editAreaPanel.getElementsByTagName("span")[0];
+console.log(editAreaPanel);
+
+function showEditAreaPanel(id,name,colorHexa,polygon,isPrivate)
+{
+    //console.log("ping");
+    editAreaPanel.style.display="block";
+    document.getElementById("areaIdEdit").value = id;
+    document.getElementById("areaNameEdit").value = name;
+    document.getElementById("areaColorHexaEdit").value = colorHexa;
+    document.getElementById("areaPolygonEdit").value = polygon.substr(9, polygon.length-11);
+    if(isPrivate == true)
+    {
+       document.getElementById("areaPrivate").checked = true;
+    }
+    else if(isPrivate == false)
+    {
+       document.getElementById("areaPublic").checked = true;         
+    }
+    //console.log(id,name,colorHexa,polygon,isPrivate);
+}
+
+trigger2.addEventListener("click", function (e) {       
+    //TODO : purge formulaire      
+    editAreaPanel.style.display="none";
     }
 );
 

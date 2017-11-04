@@ -40,7 +40,7 @@ nav
 section
 {
 	max-width:50%;
-	margin:auto;
+	margin:0px;
 	background-color:lightgrey;
 	position:relative;
 	padding:5px;
@@ -150,6 +150,8 @@ td
 .popUp
 {
 	display:none;
+	margin:20px;
+	border:1px red solid;
 }
 h1
 {
@@ -168,7 +170,11 @@ h1
 {
 	display: flex;
 	margin:50px 200px 0px 3%;
-	justify-content:space-around;
+	justify-content:center;
+}
+.backofficeTools section
+{
+	margin:10px;
 }
 .backofficeList
 {

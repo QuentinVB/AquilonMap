@@ -18,7 +18,7 @@ include("./views/include/button.php");
 		if($_SESSION['rightsLevel']>0)
 		{
 		?>
-	<section id="EditPanel" class="popUp">
+	<section id="EditMarkerPanel" class="popUp">
 		<span>&nbsp; </span>
 			<h2>Editer un marqueur</h2>
 			<form method="post" action="index.php?page=marker&action=edit">
@@ -44,7 +44,6 @@ include("./views/include/button.php");
 					<input type="submit" value="sauvegarder" />
 				</p>	
 			</form>		
-		<script src="./assets/js/editPanel.js"></script>
 	</section>
 		<?php
 		}
@@ -80,6 +79,24 @@ include("./views/include/button.php");
 		if($_SESSION['rightsLevel']>0)
 		{
 		?>
+	<section id="EditAreaPanel" class="popUp">
+		<span>&nbsp; </span>
+			<h2>Editer une Zone</h2>
+			<form method="post" action="index.php?page=area&action=edit">
+				<p>			
+					<label for="name">Nom de la zone</label> : <input type="text" name="name" id="areaNameEdit" required/><br/>
+					<label for="polygon">Coordonnées</label> : <br/>
+					<textarea name="polygon" id="areaPolygonEdit" cols="35" placeholder="coordonnés de la zone sous la forme '0 1,1 1,0 1' "></textarea><br/>
+					<label for="colorHexa">Couleur de la zone </label> : <input type="color" name="colorHexa" id="areaColorHexaEdit" required/><br/>
+					<p>Visibilité : 
+						<label for="public">Public</label> : <input type="radio" name="isPrivate" id="areaPublic" value="0" checked/> / <label for="private">Privé</label> : <input type="radio" name="isPrivate" id="areaPrivate" value="1" />
+					</p>	
+					<input type="hidden" id="areaIdEdit" name="id" value=""/>
+					
+					<input type="submit" value="sauvegarder" />
+				</p>	
+			</form>		
+	</section>
 	<section>
 		<h2>Ajouter une zone</h2>
 		<form method="post" action="index.php?page=area&action=add">
@@ -97,7 +114,9 @@ include("./views/include/button.php");
 	</section>
 	<?php
 		}
-	?>
+		if($_SESSION['rightsLevel']>0)
+		{
+		?><script src="./assets/js/editPanel.js"></script><?php } ?>
 	</div>
 	<div class="backofficeList">
 	
@@ -149,7 +168,7 @@ include("./views/include/button.php");
 						{
 					?>
 					<td>	
-						<a href="#EditPanel" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>',<?php echo $datamarker['isPrivate']; ?>)" ><img src="./assets/img/pencil.png"/>modifier</a>
+						<a href="#EditMarkerPanel" onclick="showEditMarkerPanel(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>',<?php echo $datamarker['isPrivate']; ?>)" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
 						<?php deleteMarkerButton($datamarker,"backoffice");?>
 					</td>
@@ -210,7 +229,15 @@ include("./views/include/button.php");
 						if($_SESSION['rightsLevel']>0)
 						{
 					?>
-					<td>	
+					<td>
+					<a href="#EditAreaPanel" onclick="showEditAreaPanel(
+						<?php echo $dataArea['id']; ?>,
+						'<?php echo addslashes($dataArea['name']); ?>',
+						'<?php echo $dataArea['colorHexa']; ?>',
+						'<?php echo addslashes($dataArea['polygonwkt']); ?>',
+						<?php echo $dataArea['isPrivate']; ?>
+						)"><img src="./assets/img/pencil.png"/>modifier</a>
+						&nbsp;
 						<?php deleteAreaButton($dataArea,"backoffice");?>
 					</td>
 					<?php
@@ -224,6 +251,7 @@ include("./views/include/button.php");
 		</table>
 	</section>
 	</div>
+	
 </body>
 <?php
 $reponse->closeCursor(); // Termine le traitement de la requête

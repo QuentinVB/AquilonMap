@@ -36,6 +36,9 @@ function printMarker($classe)
 		var <?php echo $classe . "X"; ?> = L.layerGroup([
 		<?php
 		$reponse = getMarkersByClasses($classe);
+		$number = count($reponse->fetchAll());
+		$reponse = getMarkersByClasses($classe);
+		$i = 0;
 		while ($datamarker = $reponse->fetch())
 		{
 			if(($datamarker['isPrivate']==FALSE))
@@ -49,10 +52,15 @@ function printMarker($classe)
 					writeMarker($datamarker);
 				}
 			}
+			if ($i < $number-1)
+			{
+				echo ',';
+			}
+			$i ++;
 		}
-		?>L.marker([0,0],{icon: lieu})]);
+		?>
+		]);
 	<?php 
-
 }
 function writeMarker($datamarker)
 {
@@ -72,7 +80,7 @@ echo $datamarker['y'];
 //Deletemarker HERE 
 deleteMarkerButton($datamarker,"map");
 //editButton($datamarker,"map");
-?>'),
+?>')
 <?php
 }
 function printArea()
@@ -87,7 +95,7 @@ function printArea()
 
 	while ($dataArea = $sqlresponse->fetch())
 	{
-		/*if($dataArea['isPrivate']==FALSE)
+		if($dataArea['isPrivate']==FALSE)
 		{
 			writeArea($dataArea);
 		}
@@ -97,8 +105,7 @@ function printArea()
 			{
 				writeArea($dataArea);
 			}
-		}*/
-		writeArea($dataArea);
+		}
 		
 		if ($i < $number-1)
 		{
