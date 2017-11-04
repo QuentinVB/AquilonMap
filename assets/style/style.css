@@ -160,13 +160,19 @@ h1
 .colorPick
 {
 	display:inline-block;
-	height:8px;
-	width:8px;
-	border : white 1 solid;
+	height:15px;
+	width:15px;
+	border : white 1px solid;
 }
-#backofficeTools
+.backofficeTools
 {
 	display: flex;
-	margin:10%;
+	margin:50px 200px 0px 3%;
 	justify-content:space-around;
+}
+.backofficeList
+{
+	display: flex;
+	justify-content:space-around;
+	flex-wrap:wrap;
 }

@@ -81,8 +81,9 @@ function printArea()
 	var areaX = L.layerGroup([
 	<?php
 	$sqlresponse = getAreas();
-	$number = count($sqlresponse);
-	$i = 1;
+	$number = count($sqlresponse->fetchAll());
+	$sqlresponse = getAreas();
+	$i = 0;
 
 	while ($dataArea = $sqlresponse->fetch())
 	{
@@ -98,7 +99,8 @@ function printArea()
 			}
 		}*/
 		writeArea($dataArea);
-		if ($i <= $number)
+		
+		if ($i < $number-1)
 		{
 			echo ',';
 		}

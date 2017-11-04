@@ -13,15 +13,15 @@ include("./views/include/button.php");
 		<h2><?php echo $msg;?></h2>			
 	</nav>
 	<h1>Map Managment</h1>
-	<div id="backofficeTools">
+	<div class="backofficeTools">
 	<?php
 		if($_SESSION['rightsLevel']>0)
 		{
 		?>
 	<section id="EditPanel" class="popUp">
 		<span>&nbsp; </span>
-			<h2>Editer un lieu</h2>
-			<form method="post" action="index.php?page=editMarker">
+			<h2>Editer un marqueur</h2>
+			<form method="post" action="index.php?page=marker&action=edit">
 				<p>				
 					<label for="name">Nom du lieu</label> : <input type="text" name="name" id="nameEdit" value="" required/><br/>
 					<label for="x">Coordonnée X </label> : <input type="text" name="x" id="xEdit" size="9" placeholder="east/west" required/><br/>
@@ -52,8 +52,8 @@ include("./views/include/button.php");
 		{
 		?>
 	<section id="AddMarkerPanel" >
-		<h2>Ajouter un lieu</h2>
-		<form method="post" action="index.php?page=addMarker">
+		<h2>Ajouter un marqueur</h2>
+		<form method="post" action="index.php?page=marker&action=add">
 			<p>
 				<label for="name">Nom du lieu</label> : <input type="text" name="name" id="name" required/><br/>
 				<label for="x">Coordonnée X </label> : <input type="text" name="x" id="x" size="9" placeholder="east/west" required/><br/>
@@ -82,7 +82,7 @@ include("./views/include/button.php");
 		?>
 	<section>
 		<h2>Ajouter une zone</h2>
-		<form method="post" action="index.php?page=addArea">
+		<form method="post" action="index.php?page=area&action=add">
 			<p>
 				<label for="name">Nom de la zone</label> : <input type="text" name="name" id="name" required/><br/>
 				<label for="polygon">Coordonnées</label> : <br/>
@@ -98,6 +98,9 @@ include("./views/include/button.php");
 	<?php
 		}
 	?>
+	</div>
+	<div class="backofficeList">
+	
 	<section>
 		<h2>Liste des Marqueurs</h2>
 		<table>
@@ -148,7 +151,7 @@ include("./views/include/button.php");
 					<td>	
 						<a href="#EditPanel" onclick="showEdit(<?php echo $datamarker['id']; ?>,'<?php echo addslashes($datamarker['name']); ?>',<?php echo $datamarker['x']; ?>,<?php echo $datamarker['y']; ?>,'<?php echo addslashes($datamarker['classes']); ?>',<?php echo $datamarker['isPrivate']; ?>)" ><img src="./assets/img/pencil.png"/>modifier</a>
 						&nbsp;
-						<?php deleteButton($datamarker,"backoffice");?>
+						<?php deleteMarkerButton($datamarker,"backoffice");?>
 					</td>
 					<?php
 						}
@@ -161,7 +164,7 @@ include("./views/include/button.php");
 		</table>
 	</section>
 	<section>
-		<h2>Liste des Zone</h2>
+		<h2>Liste des Zones</h2>
 		<table>
 			<thead>
 				<tr>
