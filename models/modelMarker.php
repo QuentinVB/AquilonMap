@@ -1,6 +1,5 @@
 <?php
 //model
-	include("./functions/database_connexion.php");
 	function getMarkers()
 	{
 		$bdd = connexion_database();

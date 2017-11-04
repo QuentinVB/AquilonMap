@@ -1,5 +1,6 @@
 <?php
 //controler
+    include("./functions/database_connexion.php");
 	include("./models/auth.php");
 	include("./controlers/msgmanager.php");
     

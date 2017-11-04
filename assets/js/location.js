@@ -19,3 +19,13 @@ document.getElementById("yPosition").addEventListener("input", function (e) {
         setPosition(xSend,ySend);
     }
 );
+
+map.on("contextmenu", function (event) {
+    //console.log("user right-clicked on map coordinates: " + event.latlng.toString());
+    xSend = Math.ceil(event.latlng.lng+3);
+    ySend = Math.ceil(-event.latlng.lat+3);
+    document.getElementById("xPosition").value = xSend;
+    document.getElementById("yPosition").value = ySend;
+    setPosition(xSend,ySend);
+    
+  });

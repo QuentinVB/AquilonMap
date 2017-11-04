@@ -36,6 +36,9 @@ function printMarker($classe)
 		var <?php echo $classe . "X"; ?> = L.layerGroup([
 		<?php
 		$reponse = getMarkersByClasses($classe);
+		$number = count($reponse->fetchAll());
+		$reponse = getMarkersByClasses($classe);
+		$i = 0;
 		while ($datamarker = $reponse->fetch())
 		{
 			if(($datamarker['isPrivate']==FALSE))
@@ -49,10 +52,15 @@ function printMarker($classe)
 					writeMarker($datamarker);
 				}
 			}
+			if ($i < $number-1)
+			{
+				echo ',';
+			}
+			$i ++;
 		}
-		?>L.marker([0,0],{icon: lieu})]);
+		?>
+		]);
 	<?php 
-
 }
 function writeMarker($datamarker)
 {
@@ -70,9 +78,64 @@ echo $datamarker['x'];
 echo $datamarker['y']; 
 ?></em><br/><?php
 //Deletemarker HERE 
-deleteButton($datamarker,"map");
+deleteMarkerButton($datamarker,"map");
 //editButton($datamarker,"map");
-?>'),
+?>')
+<?php
+}
+function printArea()
+{
+	?>
+	var areaX = L.layerGroup([
+	<?php
+	$sqlresponse = getAreas();
+	$number = count($sqlresponse->fetchAll());
+	$sqlresponse = getAreas();
+	$i = 0;
+
+	while ($dataArea = $sqlresponse->fetch())
+	{
+		if($dataArea['isPrivate']==FALSE)
+		{
+			writeArea($dataArea);
+		}
+		else if(($dataArea['isPrivate']==TRUE) && !empty($_SESSION['userName']))
+		{
+			if($_SESSION['rightsLevel']>=0)
+			{
+				writeArea($dataArea);
+			}
+		}
+		
+		if ($i < $number-1)
+		{
+			echo ',';
+		}
+		$i ++;
+	}
+	?>
+	]);
+	<?php
+}
+function writeArea($dataarea)
+{
+?>	
+L.polygon
+(
+	<?php echo wkt_to_json($dataarea['polygonwkt']) ;?>
+	,
+{
+	color: '<?php echo $dataarea['colorHexa'];?>',
+	fillColor: '<?php echo $dataarea['colorHexa'];?>',
+	fillOpacity: 0.08
+}
+).bindPopup('<?php 
+echo addslashes($dataarea['name']);
+?><br/><?php
+//DeleteArea
+deleteAreaButton($dataarea,"map");
+//editButton($datamarker,"map");
+?>')
 <?php
 }
 ?>
