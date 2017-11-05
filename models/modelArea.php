@@ -10,7 +10,7 @@
 	{		
 		$polygon = "POLYGON((".$polygon."))";
 		$bdd = connexion_database();
-		$req = $bdd->prepare("INSERT INTO `cartearea` (`id`, `name`, `colorHexa`, `polygon`, `isPrivate`) VALUES (NULL, :name, :colorHexa, ST_GeomFromText(:polygon), :isPrivate)");	
+		$req = $bdd->prepare("INSERT INTO `cartearea` (`id`, `name`, `colorHexa`, `polygon`, `isPrivate`) VALUES (NULL, :name, :colorHexa, GeomFromText(:polygon), :isPrivate)");	
 		$req -> execute(array(
 		'name' => $name,
 		'colorHexa' => $colorHexa,
@@ -22,7 +22,7 @@
 	{
 		$polygon = "POLYGON((".$polygon."))";
 		$bdd = connexion_database();
-		$req = $bdd->prepare("UPDATE `cartearea` SET `name` = :name, `colorHexa` = :colorHexa, `polygon` = ST_GeomFromText(:polygon), `isPrivate` = :isPrivate  WHERE `cartearea`.`id` = :id; ");	
+		$req = $bdd->prepare("UPDATE `cartearea` SET `name` = :name, `colorHexa` = :colorHexa, `polygon` = GeomFromText(:polygon), `isPrivate` = :isPrivate  WHERE `cartearea`.`id` = :id; ");	
 		$req -> execute(array(
 		'id' => $id,
 		'name' => $name,

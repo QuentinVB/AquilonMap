@@ -79,7 +79,7 @@ nav ul:first-of-type a:hover
 
 nav input[type=number]
 {
-	width: 50px;
+	min-width: 40px;
 }
 
 nav ul img
