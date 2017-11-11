@@ -44,12 +44,13 @@ var editAreaPanel = document.getElementById("EditAreaPanel");
 var trigger2 = editAreaPanel.getElementsByTagName("span")[0];
 //console.log(editAreaPanel);
 
-function showEditAreaPanel(id,name,colorHexa,polygon,isPrivate)
+function showEditAreaPanel(id,name,flag,colorHexa,polygon,isPrivate)
 {
     //console.log("ping");
     editAreaPanel.style.display="block";
     document.getElementById("areaIdEdit").value = id;
     document.getElementById("areaNameEdit").value = name;
+    document.getElementById("areaFlagEdit").value = flag;
     document.getElementById("areaColorHexaEdit").value = colorHexa;
     document.getElementById("areaPolygonEdit").value = polygon.substr(9, polygon.length-11);
     if(isPrivate == true)
