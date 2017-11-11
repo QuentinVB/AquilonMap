@@ -85,6 +85,7 @@ include("./views/include/button.php");
 			<form method="post" action="index.php?page=area&action=edit">
 				<p>			
 					<label for="name">Nom de la zone</label> : <input type="text" name="name" id="areaNameEdit" required/><br/>
+					<label for="flag">Drapeau </label> : <input type="text" name="flag" id="areaFlagEdit" required/><br/><small>(stocké dans /assets/img/flags/)</small><br/><br/>
 					<label for="polygon">Coordonnées</label> : <br/>
 					<textarea name="polygon" id="areaPolygonEdit" cols="35" placeholder="coordonnés de la zone sous la forme '0 1,1 1,0 1' "></textarea><br/>
 					<label for="colorHexa">Couleur de la zone </label> : <input type="color" name="colorHexa" id="areaColorHexaEdit" required/><br/>
@@ -102,6 +103,7 @@ include("./views/include/button.php");
 		<form method="post" action="index.php?page=area&action=add">
 			<p>
 				<label for="name">Nom de la zone</label> : <input type="text" name="name" id="name" required/><br/>
+				<label for="flag">Drapeau </label> : <input type="text" name="flag" id="flag" required/><br/><small>(stocké dans /assets/img/flags/)</small><br/><br/>
 				<label for="polygon">Coordonnées</label> : <br/>
 				<textarea name="polygon" id="polygon" cols="35" placeholder="coordonnés de la zone sous la forme '0 1,1 1,0 1' "></textarea><br/>
 				<label for="colorHexa">Couleur de la zone </label> : <input type="color" name="colorHexa" id="colorHexa" required/><br/>
@@ -188,6 +190,7 @@ include("./views/include/button.php");
 			<thead>
 				<tr>
 					<td>Nom</td>
+					<td>Drapeau</td>
 					<td>Couleur</td>
 					<td>Coordonnées</td>
 					<td>Visibilité</td>
@@ -209,6 +212,7 @@ include("./views/include/button.php");
 				?>
 				<tr>
 					<td><?php echo $dataArea['name']; ?></td>
+					<td><?php echo $dataArea['flag']; ?></td>
 					<td><span class="colorPick" style="background-color:<?php echo $dataArea['colorHexa']; ?>;">&nbsp;</span><?php echo $dataArea['colorHexa']; ?></td>
 					<td><em><?php echo $dataArea['polygonwkt']; ?></em></td>
 					<td class="privacy_<?php echo $dataArea['isPrivate']?>"><?php 
@@ -233,11 +237,11 @@ include("./views/include/button.php");
 					<a href="#EditAreaPanel" onclick="showEditAreaPanel(
 						<?php echo $dataArea['id']; ?>,
 						'<?php echo addslashes($dataArea['name']); ?>',
+						'<?php echo addslashes($dataArea['flag']); ?>',
 						'<?php echo $dataArea['colorHexa']; ?>',
 						'<?php echo addslashes($dataArea['polygonwkt']); ?>',
 						<?php echo $dataArea['isPrivate']; ?>
-						)"><img src="./assets/img/pencil.png"/>modifier</a>
-						&nbsp;
+						)"><img src="./assets/img/pencil.png"/>modifier</a><br/>
 						<?php deleteAreaButton($dataArea,"backoffice");?>
 					</td>
 					<?php

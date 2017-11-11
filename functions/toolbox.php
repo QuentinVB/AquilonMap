@@ -137,8 +137,11 @@ L.polygon
 	fillOpacity: 0.20
 }
 ).bindPopup('<?php 
-echo addslashes($dataarea['name']);
-?><br/><?php
+echo addslashes($dataarea['name']);?>
+<br /><?php
+if($dataarea['flag']!="") { ?>
+<img class="flags" src="./assets/img/flags/<?php echo addslashes($dataarea['flag']);?>"/><br/><?php }
+?><?php
 //DeleteArea
 deleteAreaButton($dataarea,"map");
 //editButton($datamarker,"map");
