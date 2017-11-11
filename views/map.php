@@ -41,8 +41,9 @@ include("./views/include/button.php");
 			</div>
 		</nav>
 		<div id="mapid"></div>
-        <script src="./assets/js/leaflet-1-0-3-min.js"></script>
-        <!--<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
+        <!--<script src="./assets/js/leaflet-1-0-3-min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
         <script src="./assets/js/leafletManagment.js"></script>
 		
 		<script>
@@ -57,10 +58,12 @@ include("./views/include/button.php");
 			map.fitBounds(mapBounds(5000*mult,5833*mult,[-3970,-700]));
 
 			<?php
-			$classes =["lieu","ruines","limite","biome","emplacement","fleuve","route","area"];
+			$classes =["lieu","ruines","limite","biome","emplacement","fleuve","route"];
+			
 			foreach ($classes as $value){
 				printMarker($value);
 			}
+
 			printArea();
 			?>
 			var overlays = {
@@ -79,10 +82,9 @@ include("./views/include/button.php");
 				echo $value."X.addTo(map);";
 			}
 			?>
-			emplacementX.addTo(map);
+			areaX.addTo(map);
 			var pointer = L.marker([0,0],{icon: pointer}).addTo(map);
 			//L.control.map.setView([0, 0], -1);
-					
 		</script>
 		<script src="./assets/js/location.js"></script>
 		<script src="./assets/js/toggle.js"></script>

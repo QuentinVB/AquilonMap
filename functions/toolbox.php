@@ -44,17 +44,21 @@ function printMarker($classe)
 			if(($datamarker['isPrivate']==FALSE))
 			{
 				writeMarker($datamarker);
+				if ($i < $number-1)
+				{
+					echo ',';
+				}
 			}
 			else if(($datamarker['isPrivate']==TRUE) && !empty($_SESSION['userName']))
 			{
 				if($_SESSION['rightsLevel']>=0)
 				{
 					writeMarker($datamarker);
+					if ($i < $number-1)
+					{
+						echo ',';
+					}
 				}
-			}
-			if ($i < $number-1)
-			{
-				echo ',';
 			}
 			$i ++;
 		}
@@ -98,18 +102,21 @@ function printArea()
 		if($dataArea['isPrivate']==FALSE)
 		{
 			writeArea($dataArea);
+			if ($i < $number-1)
+			{
+				echo ',';
+			}
 		}
 		else if(($dataArea['isPrivate']==TRUE) && !empty($_SESSION['userName']))
 		{
 			if($_SESSION['rightsLevel']>=0)
 			{
 				writeArea($dataArea);
+				if ($i < $number-1)
+				{
+					echo ',';
+				}
 			}
-		}
-		
-		if ($i < $number-1)
-		{
-			echo ',';
 		}
 		$i ++;
 	}
@@ -127,7 +134,7 @@ L.polygon
 {
 	color: '<?php echo $dataarea['colorHexa'];?>',
 	fillColor: '<?php echo $dataarea['colorHexa'];?>',
-	fillOpacity: 0.08
+	fillOpacity: 0.20
 }
 ).bindPopup('<?php 
 echo addslashes($dataarea['name']);

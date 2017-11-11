@@ -26,7 +26,7 @@ function showEditMarkerPanel(id,name,x,y,classes,isPrivate)
         document.getElementById("public").checked = true;         
      }
      
-     console.log(id,name,x,y,classes,isPrivate);
+     //console.log(id,name,x,y,classes,isPrivate);
     /*
      document.getElementById("public").value = y;
      document.getElementById("private").value = y;
@@ -42,7 +42,7 @@ trigger.addEventListener("click", function (e) {
 
 var editAreaPanel = document.getElementById("EditAreaPanel");
 var trigger2 = editAreaPanel.getElementsByTagName("span")[0];
-console.log(editAreaPanel);
+//console.log(editAreaPanel);
 
 function showEditAreaPanel(id,name,colorHexa,polygon,isPrivate)
 {
